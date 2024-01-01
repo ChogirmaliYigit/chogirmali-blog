@@ -162,3 +162,5 @@ cython_debug/
 media/
 .vscode/
 staticfiles/
+.DS_Store
+static/.DS_Store
