@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <main id="main">
+    <section id="search-result" class="search-result">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-1">
+            <div class="row mb-5">
+              <div class="col-md-8 offset-2">
+                  <form id="searchForm" class="search-form" method="get" action="{% url 'search' %}">
+                    <input type="text" name="query" id="searchQuery" value="{{ query }}" placeholder="Search" class="form-control">
+                  </form>
+              </div>
+            </div>
+
+            {% for result in results %}
+              <div class="d-md-flex post-entry-2 small-img">
+                <div class="me-4 thumbnail">
+                  <img src="{% if result.image %} {{ result.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}" alt="{{ result.title|striptags|safe }}" title="{{ result.title|striptags|safe }}" class="img-fluid">
+                </div>
+                <div>
+                  <div class="post-meta">
+                    <!-- <span class="date">Business</span>
+                    <span class="mx-1">&bullet;</span> -->
+                    <span class="date">{{ result.updated_at|date }}</span>
+                  </div>
+                  <h3><a href="{% url 'post-detail' result.pk %}">{{ result.title|striptags|safe|truncatechars:40 }}</a></h3>
+                  <p>{{ result.content|striptags|safe|truncatechars:200 }}</p>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock content %}

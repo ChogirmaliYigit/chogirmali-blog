@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main">
+    <section style="overflow: scroll;">
+        <div class="container">
+            <div class="row">
+                {% for post in posts %}
+                    <div class="col-md-6 mx-auto" data-aos="fade-up" style="height: 400px;">
+                        <div class="d-md-flex post-entry-2 half">
+                            <div class="d-inline" style="width: 50%;">
+                                <img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}"
+                                    alt="{{ post.title|striptags|safe }}" title="{{ post.title|striptags|safe }}"
+                                    style="height: 116px;" />
+                                <div class="row" style="height: calc(331px - 116px - 38px);"></div>
+                                <a href="{% url 'post-detail' post.pk %}" class="btn btn-outline-primary" style="margin-top: auto;">To'liq o'qish</a>
+                            </div>
+                            <div class="d-inline" style="width: 90%;margin-left: 3%;">
+                                <div class="row" style="min-height: calc(357px - 38px);">
+                                    <div>
+                                        <div class="post-meta">
+                                            <!-- <span class="date">Culture</span>
+                                                    <span class="mx-1">&bullet;</span> -->
+                                            <span class="date">{{ post.updated_at|date }}</span>
+                                        </div>
+                                        <h3>{{ post.title|safe|truncatechars:40 }}</h3>
+                                        <p>
+                                            {{ post.content|safe|truncatechars:200 }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="col-md-10">
+                        <div class="d-md-flex post-entry-2 half">
+                            <div>
+                                <h4>
+                                    Afsuski hozircha postlar yo'q 😔
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- <div class="text-start py-4">
+                <div class="custom-pagination">
+                    <a href="#" class="prev">Prevous</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#" class="next">Next</a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+</main>
+{% endblock content %}
