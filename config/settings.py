@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--f(j&h391mtgax!p%4b(w^4iv_8hs3=))6t7n0=8v%2p7+-ao8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG")
 
 ALLOWED_HOSTS = env.str("ALLOWED_HOSTS").split(',')
 
@@ -157,4 +157,3 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
 CKEDITOR_IMAGE_BACKEND = "ckeditor_uploader.backends.PillowBackend"
-

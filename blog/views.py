@@ -1,7 +1,7 @@
 from typing import Any
 from django.views.generic import TemplateView
 from django.db.models import Q
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from blog.models import Post, AboutMeSections, PRODUCTION
 from blog.utils import send_contact_info_to_telegram_chat
 
@@ -30,13 +30,14 @@ class PostDetailView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated and self.request.user.is_staff:
-            post = Post.objects.filter(pk=context.get("pk")).first()
+            post = get_object_or_404(Post, pk=context.get("pk"))
             context["previous_post"] = post.previous(is_production=False)
             context["next_post"] = post.next(is_production=False)
         else:
-            post = Post.objects.filter(pk=context.get("pk"), status=PRODUCTION).first()
-            context["previous_post"] = post.previous
-            context["next_post"] = post.next
+            post = get_object_or_404(Post, pk=context.get("pk"), status=PRODUCTION)
+            if post:
+                context["previous_post"] = post.previous()
+                context["next_post"] = post.next()
         context["post"] = post
         return context
 
@@ -76,3 +77,19 @@ class SearchView(TemplateView):
         if not request.user.is_authenticated and not request.user.is_staff:
             results = results.filter(status=PRODUCTION)
         return render(request, self.template_name, {"results": results, "query": query})
+
+
+def bad_request(request, exception=None):
+    return render(request, "errors/400.html")
+
+
+def permission_denied(request, exception=None):
+    return render(request, "errors/403.html")
+
+
+def not_found(request, exception=None):
+    return render(request, "errors/404.html")
+
+
+def server_error(request, exception=None):
+    return render(request, "errors/500.html")
