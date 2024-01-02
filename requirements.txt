@@ -1,4 +1,4 @@
-django==5.0
+django==5.0.1
 environs==10.0.0
 psycopg2-binary==2.9.9
 pillow==10.1.0
