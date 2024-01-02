@@ -1194,9 +1194,8 @@ section {
 --------------------------------------------------------------*/
 .footer {
   overflow: hidden;
-  background: rgba(var(--color-black-rgb), 0.9);
+  background: #f2f2f2;
   font-size: 16px;
-  color: rgba(var(--color-white-rgb), 0.7);
 }
 
 .footer .footer-content {
@@ -1240,7 +1239,7 @@ section {
   letter-spacing: 0.07rem;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: var(--font-secondary);
+  font-family: var(--font-roboto);
   color: rgba(var(--color-white-rgb), 0.4);
   margin-bottom: 0px;
 }
@@ -1255,16 +1254,16 @@ section {
 }
 
 .footer .footer-links li a {
-  color: rgba(var(--color-white-rgb), 0.7);
+  color: rgba(var(--color-black-rgb), 0.7);
 }
 
 .footer .footer-links li a:hover,
 .footer .footer-links li a:focus {
-  color: rgba(var(--color-white-rgb), 1);
+  color: rgba(var(--color-black-rgb), 1);
 }
 
 .footer .footer-legal {
-  background: var(--color-black);
+  background: #f2f2f2;
   padding: 40px 0;
 }
 
@@ -1273,14 +1272,14 @@ section {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: rgba(var(--color-white-rgb), 0.09);
+  background-color: rgba(var(--color-black-rgb), 0.09);
   border-radius: 50%;
-  color: var(--color-white);
+  color: var(--color-black);
   line-height: 40px;
 }
 
 .footer .footer-legal .social-links a:hover {
-  background-color: rgba(var(--color-white-rgb), 0.2);
+  background-color: rgba(var(--color-black-rgb), .4);
 }
 
 .footer .copyright strong {
@@ -1293,5 +1292,6 @@ section {
 }
 
 .footer .credits a {
-  color: var(--color-white);
+  color: var(--color-black);
+  text-decoration: underline;
 }

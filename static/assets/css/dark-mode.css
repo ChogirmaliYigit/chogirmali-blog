@@ -9,8 +9,9 @@
 }
 
 body {
-  background-color: black !important;
-  color: rgba(var(--color-white-rgb), 1);
+  background-color: #0d1117 !important;
+  color: #e6edf3 !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji" !important;
 }
 
 a {
@@ -127,7 +128,7 @@ section {
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: #111000;
+  background: black;
 }
 
 .header.sticked {
@@ -171,8 +172,7 @@ section {
 
 .search-form-wrap .search-form .form-control {
   width: 300px;
-  border: none;
-  box-shadow: 0 15px 20px -10px rgba(var(--color-white-rgb), 0.1);
+  border: 0.5px solid var(--color-gray);
   padding-left: 40px;
   padding-right: 40px;
   background-color: var(--color-black);
@@ -213,6 +213,16 @@ section {
 .search-form-wrap.active {
   visibility: visible;
   opacity: 1;
+}
+
+#search-result .search-form input::placeholder {
+  color: var(--color-gray);
+}
+
+#search-result .search-form input {
+  border: 0.5px solid var(--color-gray);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 section {
@@ -1218,7 +1228,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   overflow: hidden;
-  background: #111000;
+  background: black;
   font-size: 16px;
   color: rgba(var(--color-white-rgb), 0.7);
 }
@@ -1288,7 +1298,7 @@ section {
 }
 
 .footer .footer-legal {
-  background: #111000;
+  background: black;
   padding: 40px 0;
 }
 
@@ -1318,4 +1328,5 @@ section {
 
 .footer .credits a {
   color: var(--color-white);
+  text-decoration: underline;
 }

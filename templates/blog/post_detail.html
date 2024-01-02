@@ -6,14 +6,14 @@
       <div class="container">
         <div class="row">
           <div class="col-md-10 offset-1 post-content" data-aos="fade-up">
-            <div class="single-post">
+            <div class="single-post markdown-body">
               <div class="post-meta">
                 <!-- <span class="date">Business</span>
                 <span class="mx-1">&bullet;</span> -->
                 <span class="date">{{ post.updated_at|date }}</span>
               </div>
-              <h1 class="mb-5">{{ post.title|safe }}</h1>
-              <p>{{ post.content|safe }}</p>
+              <h1 class="mb-5">{{ post.formatted_title|safe }}</h1>
+              <p>{{ post.formatted_content|safe }}</p>
             </div>
 
             {% comment %}

@@ -30,6 +30,8 @@
                   <p>{{ result.content|striptags|safe|truncatechars:200 }}</p>
                 </div>
               </div>
+            {% empty %}
+              {% include 'includes/no-content.html' %}
             {% endfor %}
 
           </div>

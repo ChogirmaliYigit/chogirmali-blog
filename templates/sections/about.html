@@ -7,24 +7,28 @@
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
-            <h3>About me</h3>
+            {% if sections %}
+              <h3>About me</h3>
+            {% endif %}
           </div>
         </div>
 
         <div class="row mb-5">
           {% for section in sections %}
-            <div class="d-md-flex post-entry-2 half">
-              {% if section.image %}
-              <div class="me-4 thumbnail">
-                <img src="{{ section.image.url }}" alt="" class="img-fluid">
-              </div>
-              {% endif %}
-              <div class="ps-md-5 mt-4 mt-md-0">
-                {% if section.meta %}<div class="post-meta mt-4">{{ section.meta }}</div>{% endif %}
-                <h2 class="mb-4 display-4">{{ section.title }}</h2>
-                <p>{{ section.content }}</p>
-              </div>
+          <div class="row mb-4 {% cycle 'flex-row-reverse' 'flex-row' %}">
+            {% if section.image %}
+            <div class="col-md-3 thumbnail">
+              <img src="{{ section.image.url }}" alt="" class="img-fluid">
             </div>
+            {% endif %}
+            <div class="col-md-9 mt-4 mt-md-0">
+              {% if section.meta %}<div class="post-meta mt-4">{{ section.meta }}</div>{% endif %}
+              <h2 class="mb-4 display-4">{{ section.title }}</h2>
+              <p>{{ section.content }}</p>
+            </div>
+          </div>
+          {% empty %}
+            {% include 'includes/no-content.html' %}
           {% endfor %}
         </div>
       </div>

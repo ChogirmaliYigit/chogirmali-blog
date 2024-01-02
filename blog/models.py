@@ -1,3 +1,5 @@
+import markdown
+
 from django.db import models
 from django.utils.text import slugify
 
@@ -26,6 +28,16 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    @property
+    def formatted_content(self):
+        md = markdown.Markdown(extensions=["fenced_code"])
+        return md.convert(str(self.content))
+
+    @property
+    def formatted_title(self):
+        md = markdown.Markdown(extensions=["fenced_code"])
+        return md.convert(str(self.title))
 
     def previous(self, is_production: bool = True):
         query = Post.objects.filter(
@@ -57,3 +69,13 @@ class AboutMeSections(models.Model):
     class Meta:
         db_table = "about_me"
         verbose_name_plural = "About Me Sections"
+
+    @property
+    def formatted_content(self):
+        md = markdown.Markdown(extensions=["fenced_code"])
+        return md.convert(str(self.content))
+
+    @property
+    def formatted_title(self):
+        md = markdown.Markdown(extensions=["fenced_code"])
+        return md.convert(str(self.title))

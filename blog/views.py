@@ -1,4 +1,3 @@
-from typing import Any
 from django.views.generic import TemplateView
 from django.db.models import Q
 from django.shortcuts import redirect, render, get_object_or_404
@@ -15,7 +14,6 @@ class BlogView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        queryset = []
         if self.request.user.is_authenticated and self.request.user.is_staff:
             queryset = Post.objects.all()
         else:
@@ -59,7 +57,6 @@ class AboutView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        queryset = []
         if self.request.user.is_authenticated and self.request.user.is_staff:
             queryset = AboutMeSections.objects.all()
         else:

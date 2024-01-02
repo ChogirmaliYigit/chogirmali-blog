@@ -1,5 +1,6 @@
 from django.urls import path
-from blog.views import MainView, BlogView, PostDetailView, ContactView, ThanksForContactingView, AboutView, SearchView, bad_request, permission_denied, not_found, server_error
+from blog.views import (MainView, BlogView, PostDetailView, ContactView, ThanksForContactingView, AboutView, SearchView,
+                        bad_request, permission_denied, not_found, server_error)
 
 
 urlpatterns = [

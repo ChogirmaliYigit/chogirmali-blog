@@ -11,12 +11,12 @@
                         <div class="d-md-flex post-entry-2 half">
                             <div class="d-inline" style="width: 50%;">
                                 <img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}"
-                                    alt="{{ post.title|striptags|safe }}" title="{{ post.title|striptags|safe }}"
+                                    alt="{{ post.formatted_title|striptags|safe }}" title="{{ post.formatted_title|striptags|safe }}"
                                     style="height: 116px;" />
                                 <div class="row" style="height: calc(331px - 116px - 38px);"></div>
                                 <a href="{% url 'post-detail' post.pk %}" class="btn btn-outline-primary" style="margin-top: auto;">To'liq o'qish</a>
                             </div>
-                            <div class="d-inline" style="width: 90%;margin-left: 3%;">
+                            <div class="d-inline markdown-body" style="width: 90%;margin-left: 3%;">
                                 <div class="row" style="min-height: calc(357px - 38px);">
                                     <div>
                                         <div class="post-meta">
@@ -24,9 +24,9 @@
                                                     <span class="mx-1">&bullet;</span> -->
                                             <span class="date">{{ post.updated_at|date }}</span>
                                         </div>
-                                        <h3>{{ post.title|safe|truncatechars:40 }}</h3>
+                                        <h3>{{ post.formatted_title|safe|truncatechars:40 }}</h3>
                                         <p>
-                                            {{ post.content|safe|truncatechars:200 }}
+                                            {{ post.formatted_content|safe|truncatechars:200 }}
                                         </p>
                                     </div>
                                 </div>
@@ -34,15 +34,7 @@
                         </div>
                     </div>
                 {% empty %}
-                    <div class="col-md-10">
-                        <div class="d-md-flex post-entry-2 half">
-                            <div>
-                                <h4>
-                                    Afsuski hozircha postlar yo'q 😔
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'includes/no-content.html' %}
                 {% endfor %}
             </div>
             <!-- <div class="text-start py-4">

@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
 from pathlib import Path
 from environs import Env
 
@@ -28,12 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--f(j&h391mtgax!p%4b(w^4iv_8hs3=))6t7n0=8v%2p7+-ao8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG")
+DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = env.str("ALLOWED_HOSTS").split(',')
+ALLOWED_HOSTS = env.str("ALLOWED_HOSTS", []).split(',')
 
-TELEGRAM_BOT_TOKEN = env.str("TELEGRAM_BOT_TOKEN")
-TELEGRAM_CHAT_ID = env.str("TELEGRAM_CHAT_ID")
+TELEGRAM_BOT_TOKEN = env.str("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = env.str("TELEGRAM_CHAT_ID", "")
 
 
 # Application definition
@@ -46,8 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "ckeditor",
-    "ckeditor_uploader",
     "blog",
 ]
 
@@ -151,9 +148,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     "show_ui_builder": True,
 }
-
-CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
-
-CKEDITOR_UPLOAD_PATH = "ckeditor/"
-
-CKEDITOR_IMAGE_BACKEND = "ckeditor_uploader.backends.PillowBackend"
