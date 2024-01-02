@@ -26,6 +26,8 @@ class Migration(migrations.Migration):
                         default="staging",
                     ),
                 ),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('updated_at', models.DateTimeField(auto_now=True)),
             ],
             options={
                 'db_table': 'blog_posts',

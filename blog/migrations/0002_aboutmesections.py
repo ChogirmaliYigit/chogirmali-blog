@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog', '0003_post_created_at_post_updated_at'),
+        ('blog', '0001_initial'),
     ]
 
     operations = [
@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(blank=True, null=True, upload_to='about_me/')),
                 ('title', models.CharField(max_length=500)),
                 ('content', models.TextField()),
+                ('status', models.CharField(choices=[('production', 'Production'), ('staging', 'Staging')], default='staging', max_length=20)),
             ],
             options={
                 'verbose_name_plural': 'About Me Sections',
