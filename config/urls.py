@@ -11,7 +11,6 @@ handler500 = "blog.views.server_error"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("blog.urls")),
-    path('markdownx/', include('markdownx.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
