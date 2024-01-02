@@ -170,6 +170,11 @@ section {
   color: var(--color-white);
 }
 
+.js-search-close,
+.js-search-close:hover {
+  color: var(--color-white);
+}
+
 .search-form-wrap .search-form .form-control {
   width: 300px;
   border: 0.5px solid var(--color-gray);
