@@ -1,4 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_styles %}
+<style>
+  .container .row img.post-img {
+    width: auto;
+    height: 50%;
+  }
+
+  @media (max-width: 1279px) {
+    .container .row img.post-img {
+      width: 50%;
+      height: auto;
+    }
+  }
+</style>
+{% endblock extra_styles %}
 
 {% block content %}
   <main id="main">
@@ -7,6 +24,9 @@
         <div class="row">
           <div class="col-md-12 post-content" data-aos="fade-up">
             <div class="single-post markdown-body">
+              <figure class="my-4 text-center">
+                <img src="{% if post.image %}{{ post.image.url }}{% else %}{% static 'assets/img/no-image.jpeg' %}{% endif %}" alt="{{ post.formatted_title|striptags|safe }}" title="{{ post.formatted_title|striptags|safe }}" class="img-fluid post-img">
+              </figure>
               <div class="post-meta">
                 <!-- <span class="date">Business</span>
                 <span class="mx-1">&bullet;</span> -->

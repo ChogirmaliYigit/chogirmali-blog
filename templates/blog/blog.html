@@ -8,10 +8,18 @@
         height: 50%;
     }
 
+    .container .row div {
+        max-height: 300px;
+    }
+
     @media (max-width: 1279px) {
         .container .row img.post-img {
             width: 50%;
             height: auto;
+        }
+
+        .container .row div {
+            max-height: 500px;
         }
     }
 </style>
@@ -23,7 +31,7 @@
         <div class="container">
             <div class="row">
                 {% for post in posts %}
-                <div class="col-md-12 mx-auto" data-aos="fade-up">
+                <div class="col-md-12 mx-auto mb-3" data-aos="fade-up">
                     <div class="mb-3">
                         <div class="row g-0">
                             <div class="col-md-6 text-sm-center">

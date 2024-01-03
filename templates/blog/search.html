@@ -34,7 +34,7 @@
             {% for result in results %}
               <div class="d-md-flex post-entry-2 small-img">
                 <div class="me-4 thumbnail text-sm-center">
-                  <img src="{% if result.image %} {{ result.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}" alt="{{ result.title|striptags|safe }}" title="{{ result.title|striptags|safe }}" class="post-img img-fluid">
+                  <img src="{% if result.image %} {{ result.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}" alt="{{ result.formatted_title|safe }}" title="{{ result.formatted_title|safe }}" class="post-img img-fluid">
                 </div>
                 <div>
                   <div class="post-meta">
@@ -42,8 +42,8 @@
                     <span class="mx-1">&bullet;</span> -->
                     <span class="date">{{ result.updated_at|date }}</span>
                   </div>
-                  <h3><a href="{% url 'post-detail' result.pk %}">{{ result.title|striptags|safe|truncatechars:40 }}</a></h3>
-                  <p>{{ result.content|striptags|safe|truncatechars:200 }}</p>
+                  <h3><a href="{% url 'post-detail' result.pk %}">{{ result.formatted_title|safe|truncatechars:40 }}</a></h3>
+                  <p>{{ result.formatted_content|safe|truncatechars:100 }}</p>
                 </div>
               </div>
             {% empty %}

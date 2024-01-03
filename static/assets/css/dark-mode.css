@@ -384,7 +384,7 @@ section {
     padding: 10px 0;
     margin: 0;
     border-radius: 10px;
-    background-color: var(--color-black);
+    background-color: #0d1117;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -425,7 +425,7 @@ section {
     z-index: 99;
     padding: 10px 0;
     margin: 10px 20px;
-    background: var(--color-black);
+    background: #0d1117;
     transition: all 0.5s ease-in-out;
     box-shadow: 0px 0px 30px rgba(var(--color-white-rgb), 0.1);
   }
@@ -457,14 +457,14 @@ section {
     top: 15px;
     right: 15px;
     z-index: 9999;
-    color: var(--color-black);
+    color: #0d1117;
   }
 
   .mobile-nav-active .navbar {
     position: fixed;
     overflow: hidden;
     inset: 0;
-    background: rgba(var(--color-white-rgb), 0.6);
+    background: rgba(var(--color-gray-rgb), 0.6);
     transition: 0.3s;
   }
 

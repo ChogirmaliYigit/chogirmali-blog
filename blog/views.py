@@ -70,9 +70,11 @@ class SearchView(TemplateView):
 
     def get(self, request):
         query = request.GET.get("query")
-        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
-        if not request.user.is_authenticated and not request.user.is_staff:
-            results = results.filter(status=PRODUCTION)
+        results = []
+        if query:
+            results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+            if not request.user.is_authenticated and not request.user.is_staff:
+                results = results.filter(status=PRODUCTION)
         return render(request, self.template_name, {"results": results, "query": query})
 
 
