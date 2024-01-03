@@ -1335,3 +1335,16 @@ section {
   color: var(--color-white);
   text-decoration: underline;
 }
+
+#languageDropdownContainer ul.dropdown-menu {
+  background-color: #0d1117;
+  border: 2px solid black;
+}
+
+#languageDropdownContainer ul.dropdown-menu li a:hover {
+  background-color: black;
+}
+
+#languageDropdownContainer ul.dropdown-menu li a {
+  color: white;
+}

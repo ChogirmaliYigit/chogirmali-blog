@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block extra_styles %}
 <style>
@@ -26,7 +27,7 @@
             <div class="row mb-5">
               <div class="col-md-12">
                   <form id="searchForm" class="search-form" method="get" action="{% url 'search' %}">
-                    <input type="text" name="query" id="searchQuery" value="{{ query }}" placeholder="Search" class="form-control">
+                    <input type="text" name="query" id="searchQuery" value="{{ query }}" placeholder="{% trans 'Search' %}" class="form-control">
                   </form>
               </div>
             </div>

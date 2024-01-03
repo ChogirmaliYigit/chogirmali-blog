@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'assets/css/theme-switcher.css' %}">
@@ -15,13 +16,23 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a href="{% url 'blog' %}">Blog</a></li>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+                <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
             </ul>
         </nav>
 
         <div class="position-relative d-flex align-items-center">
-            <!-- TODO: add dark mode -->
+            <div class="dropdown" style="margin-right: 10px;" id="languageDropdownContainer">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    {% get_current_language as current_language %}
+                    {% if current_language == 'en' %} {% trans "english" %} {% else %} {% trans "uzbek" %} {% endif %}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li><a class="dropdown-item" href="" data-language="en">{% trans "english" %}</a></li>
+                    <li><a class="dropdown-item" href="" data-language="uz">{% trans "uzbek" %}</a></li>
+                </ul>
+            </div>
             <ul class="navbar-nav ml-auto">
                 <li class="input-group d-flex align-items-center mb-0">
                     <label class="switch theme-switch">
@@ -37,7 +48,7 @@
             <div class="search-form-wrap js-search-form-wrap">
                 <form id="searchForm" class="search-form" method="get" action="{% url 'search' %}">
                     <span class="icon bi-search"></span>
-                    <input type="text" name="query" id="searchQuery" placeholder="Search" class="form-control" value="{{ query }}">
+                    <input type="text" name="query" id="searchQuery" placeholder="{% trans 'Search' %}" class="form-control" value="{{ query }}">
                     <button type="submit" class="btn js-search-close"><span class="bi-x"></span></button>
                 </form>
             </div>
@@ -71,8 +82,8 @@
             const searchInput = document.getElementById("searchQuery");
             searchInput.addEventListener("keydown", function (event) {
                 if (event.key === "Enter") {
-                    event.preventDefault(); // Prevent the default form submission
-                    document.getElementById("searchForm").submit(); // Submit the form
+                    event.preventDefault();
+                    document.getElementById("searchForm").submit();
                 }
             });
 
@@ -87,6 +98,43 @@
                 isDarkMode
                     ? document.body.classList.add("dark-content")
                     : document.body.classList.remove("dark-content");
+            }
+
+            const languageDropdownContainer = document.getElementById("languageDropdownContainer");
+
+            // Add an event listener to the language dropdown items
+            languageDropdownContainer.addEventListener("click", function (event) {
+                const target = event.target;
+
+                // Check if the clicked element is a dropdown item
+                if (target.classList.contains("dropdown-item")) {
+                    event.preventDefault();
+
+                    // Get the language code from the data-language attribute
+                    const languageCode = target.getAttribute("data-language");
+
+                    // Update the URL with the new language code
+                    const currentUrl = window.location.href;
+                    const updatedUrl = updateUrlLanguage(currentUrl, languageCode);
+
+                    // Redirect to the updated URL
+                    window.location.href = updatedUrl;
+                }
+            });
+
+            function updateUrlLanguage(url, newLanguage) {
+                // Extract the current language code from the URL
+                const languageMatch = url.match(/\/([a-z]{2})\//i);
+
+                if (languageMatch && languageMatch[1]) {
+                    const currentLanguage = languageMatch[1];
+
+                    // Replace the current language code with the new language code
+                    const updatedUrl = url.replace(`/${currentLanguage}/`, `/${newLanguage}/`);
+                    return updatedUrl;
+                }
+
+                return url;
             }
         });
 

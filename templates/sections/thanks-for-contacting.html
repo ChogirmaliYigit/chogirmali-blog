@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block extra_styles %}
 <style>
@@ -71,18 +72,19 @@
 {% endblock extra_styles %}
 
 {% block content %}
-<section id="greetings" class="greetings mb-5" style="align-items: center;justify-content: center;text-align: center;">
+<section id="thanks-for-contacting" class="thanks-for-contacting mb-5" style="align-items: center;justify-content: center;text-align: center;">
     <div class="container" data-aos="fade-up">
         <div class="row g-5">
             <div class="col-lg-6 offset-3">
                 <div class="post-entry-1 lg">
                     <div class="handshake-animation">&#129309;</div>
-                    <h3>Thanks for contacting me! I will contact you soon with your details if they are correct.</h3>
+                    <h3>{% trans "Thanks for contacting me! I will contact you soon with your details if they are correct." %}</h3>
                     <p class="mb-4 d-block">
-                        You will be redirected to the main page after <span class="countdown-animation" id="countdown">5</span> seconds. Note: If you don't get redirected, please click the button
-                        below.
+                        {% trans "You will be redirected to the main page after <span class="countdown-animation" id="countdown">5</span> seconds. Note:
+                        If you don't get redirected, please click the button
+                        below." %}
                     </p>
-                    <a class="btn btn-outline-primary" href="{% url 'main' %}">Go to home</a>
+                    <a class="btn btn-outline-primary" href="{% url 'main' %}">{% trans "Go to home" %}</a>
                     <div class="progress-bar-container">
                         <div class="progress-bar" id="progress-bar"></div>
                     </div>

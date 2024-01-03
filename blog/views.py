@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.db.models import Q
 from django.shortcuts import redirect, render, get_object_or_404
+from django.utils.translation import get_language
 from blog.models import Post, AboutMeSections, PRODUCTION
 from blog.utils import send_contact_info_to_telegram_chat
 
@@ -15,9 +16,9 @@ class BlogView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated and self.request.user.is_staff:
-            queryset = Post.objects.all()
+            queryset = Post.objects.filter(language=get_language())
         else:
-            queryset = Post.objects.filter(status=PRODUCTION)
+            queryset = Post.objects.filter(status=PRODUCTION, language=get_language())
         context["posts"] = queryset
         return context
 
@@ -28,11 +29,11 @@ class PostDetailView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated and self.request.user.is_staff:
-            post = get_object_or_404(Post, pk=context.get("pk"))
+            post = get_object_or_404(Post, pk=context.get("pk"), language=get_language())
             context["previous_post"] = post.previous(is_production=False)
             context["next_post"] = post.next(is_production=False)
         else:
-            post = get_object_or_404(Post, pk=context.get("pk"), status=PRODUCTION)
+            post = get_object_or_404(Post, pk=context.get("pk"), status=PRODUCTION, language=get_language())
             if post:
                 context["previous_post"] = post.previous()
                 context["next_post"] = post.next()
@@ -58,9 +59,9 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated and self.request.user.is_staff:
-            queryset = AboutMeSections.objects.all()
+            queryset = AboutMeSections.objects.filter(language=get_language())
         else:
-            queryset = AboutMeSections.objects.filter(status=PRODUCTION)
+            queryset = AboutMeSections.objects.filter(status=PRODUCTION, language=get_language())
         context["sections"] = queryset
         return context
 
@@ -73,6 +74,7 @@ class SearchView(TemplateView):
         results = []
         if query:
             results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+            results.filter(language=get_language())
             if not request.user.is_authenticated and not request.user.is_staff:
                 results = results.filter(status=PRODUCTION)
         return render(request, self.template_name, {"results": results, "query": query})

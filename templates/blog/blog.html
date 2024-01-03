@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
+{% block title %}  Cho'girmali Blog {% endblock title %}
 
 {% block extra_styles %}
 <style>
@@ -50,14 +53,14 @@
                                         {{ post.formatted_content|safe|truncatechars:100 }}
                                     </p>
                                     <a href="{% url 'post-detail' post.pk %}"
-                                        class="btn btn-outline-primary d-block mt-auto">To'liq o'qish</a>
+                                        class="btn btn-outline-primary d-block mt-auto">{% trans "read more" %}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% empty %}
-                {% include 'includes/no-content.html' %}
+                    {% include 'includes/no-content.html' %}
                 {% endfor %}
             </div>
         </div>

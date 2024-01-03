@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
   <main id="main">
@@ -7,7 +8,7 @@
 
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
-            <h3>Contact me with </h3>
+            <h3>{% trans "Contact me with" %} </h3>
           </div>
         </div>
 
@@ -22,7 +23,7 @@
           <div class="col-md-4">
             <div class="info-item info-item-borders">
               <i class="bi bi-phone"></i>
-              <h3>Phone Number</h3>
+              <h3>{% trans "Phone Number" %}</h3>
               <p><a href="tel:+998884564224">+998 (88) 456 42-24</a></p>
             </div>
           </div>
@@ -37,7 +38,7 @@
 
         <div class="row mt-5">
           <div class="col-lg-12 text-center mb-5">
-            <h3>or</h3>
+            <h3>{% trans "or" %}</h3>
           </div>
         </div>
 
@@ -46,19 +47,19 @@
             {% csrf_token %}
             <div class="row">
               <div class="form-group col-md-6 mb-3">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" id="name" placeholder="{% trans 'Your Name' %}" required>
               </div>
               <div class="form-group col-md-6 mb-3">
-                <input type="text" class="form-control" name="email_or_username" id="email" placeholder="Your Email or Telegram username" required>
+                <input type="text" class="form-control" name="email_or_username" id="email" placeholder="{% trans 'Your Email or Telegram username' %}" required>
               </div>
             </div>
             <div class="form-group mb-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="{% trans 'Subject' %}" required>
             </div>
             <div class="form-group mb-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              <textarea class="form-control" name="message" rows="5" placeholder="{% trans 'Message' %}" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="submit" class="btn btn-primary">{% trans "Send Message" %}</button>
           </form>
         </div>
       </div>

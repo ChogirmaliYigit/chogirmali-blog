@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
   <main id="main">
@@ -8,7 +9,7 @@
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
             {% if sections %}
-              <h3>About me</h3>
+              <h3>{% trans "About me" %}</h3>
             {% endif %}
           </div>
         </div>

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block extra_styles %}
 <style>
@@ -140,12 +141,12 @@
             <div class="row mt-4">
               <div class="col-6">
                 {% if previous_post %}
-                  <a href="{% url 'post-detail' previous_post.pk %}" class="btn btn-secondary">&laquo; Previous</a>
+                  <a href="{% url 'post-detail' previous_post.pk %}" class="btn btn-secondary">&laquo; {% trans "Previous" %}</a>
                 {% endif %}
               </div>
               <div class="col-6 text-end">
                 {% if next_post %}
-                  <a href="{% url 'post-detail' next_post.pk %}" class="btn btn-secondary">Next &raquo;</a>
+                  <a href="{% url 'post-detail' next_post.pk %}" class="btn btn-secondary">{% trans "Next" %} &raquo;</a>
                 {% endif %}
               </div>
             </div>
