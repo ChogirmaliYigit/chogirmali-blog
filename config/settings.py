@@ -148,3 +148,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 JAZZMIN_SETTINGS = {
     "show_ui_builder": True,
 }
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 100 * 1024 * 1024
