@@ -125,8 +125,8 @@ EN = "en"
 UZ = "uz"
 
 SUPPORTED_LANGUAGES = (
-    (EN, _("english")),
     (UZ, _("uzbek")),
+    (EN, _("english")),
 )
 
 LANGUAGE_CODE = 'uz'
