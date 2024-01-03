@@ -1,53 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_styles %}
+<style>
+    .container .row img.post-img {
+        width: auto;
+        height: 50%;
+    }
+
+    @media (max-width: 1279px) {
+        .container .row img.post-img {
+            width: 50%;
+            height: auto;
+        }
+    }
+</style>
+{% endblock extra_styles %}
+
 {% block content %}
 <main id="main">
     <section style="overflow: scroll;">
         <div class="container">
             <div class="row">
                 {% for post in posts %}
-                    <div class="col-md-6 mx-auto" data-aos="fade-up" style="height: 400px;">
-                        <div class="d-md-flex post-entry-2 half">
-                            <div class="d-inline" style="width: 50%;">
-                                <img src="{% if post.image %} {{ post.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}"
-                                    alt="{{ post.formatted_title|striptags|safe }}" title="{{ post.formatted_title|striptags|safe }}"
-                                    style="height: 116px;" />
-                                <div class="row" style="height: calc(331px - 116px - 38px);"></div>
-                                <a href="{% url 'post-detail' post.pk %}" class="btn btn-outline-primary" style="margin-top: auto;">To'liq o'qish</a>
+                <div class="col-md-12 mx-auto" data-aos="fade-up">
+                    <div class="mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-6 text-sm-center">
+                                <img src="{% if post.image %}{{ post.image.url }}{% else %}{% static 'assets/img/no-image.jpeg' %}{% endif %}"
+                                    alt="{{ post.formatted_title|striptags|safe }}"
+                                    title="{{ post.formatted_title|striptags|safe }}" class="post-img img-fluid"
+                                />
                             </div>
-                            <div class="d-inline markdown-body" style="width: 90%;margin-left: 3%;">
-                                <div class="row" style="min-height: calc(357px - 38px);">
-                                    <div>
-                                        <div class="post-meta">
-                                            <!-- <span class="date">Culture</span>
-                                                    <span class="mx-1">&bullet;</span> -->
-                                            <span class="date">{{ post.updated_at|date }}</span>
-                                        </div>
-                                        <h3>{{ post.formatted_title|safe|truncatechars:40 }}</h3>
-                                        <p>
-                                            {{ post.formatted_content|safe|truncatechars:100 }}
-                                        </p>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <div class="post-meta">
+                                        <span class="date">{{ post.updated_at|date }}</span>
                                     </div>
+                                    <h3 class="card-title">{{ post.formatted_title|safe|truncatechars:40 }}</h3>
+                                    <p class="card-text">
+                                        {{ post.formatted_content|safe|truncatechars:100 }}
+                                    </p>
+                                    <a href="{% url 'post-detail' post.pk %}"
+                                        class="btn btn-outline-primary d-block mt-auto">To'liq o'qish</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 {% empty %}
-                    {% include 'includes/no-content.html' %}
+                {% include 'includes/no-content.html' %}
                 {% endfor %}
             </div>
-            <!-- <div class="text-start py-4">
-                <div class="custom-pagination">
-                    <a href="#" class="prev">Prevous</a>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#" class="next">Next</a>
-                </div>
-            </div> -->
         </div>
     </section>
 </main>

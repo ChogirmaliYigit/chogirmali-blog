@@ -1,14 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_styles %}
+<style>
+  .container .row img.post-img {
+    width: auto;
+    height: 50%;
+  }
+
+  @media (max-width: 1279px) {
+    .container .row img.post-img {
+      width: 50%;
+      height: auto;
+    }
+  }
+</style>
+{% endblock extra_styles %}
+
 {% block content %}
   <main id="main">
     <section id="search-result" class="search-result">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 offset-1">
+          <div class="col-md-12">
             <div class="row mb-5">
-              <div class="col-md-8 offset-2">
+              <div class="col-md-12">
                   <form id="searchForm" class="search-form" method="get" action="{% url 'search' %}">
                     <input type="text" name="query" id="searchQuery" value="{{ query }}" placeholder="Search" class="form-control">
                   </form>
@@ -17,8 +33,8 @@
 
             {% for result in results %}
               <div class="d-md-flex post-entry-2 small-img">
-                <div class="me-4 thumbnail">
-                  <img src="{% if result.image %} {{ result.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}" alt="{{ result.title|striptags|safe }}" title="{{ result.title|striptags|safe }}" class="img-fluid">
+                <div class="me-4 thumbnail text-sm-center">
+                  <img src="{% if result.image %} {{ result.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}" alt="{{ result.title|striptags|safe }}" title="{{ result.title|striptags|safe }}" class="post-img img-fluid">
                 </div>
                 <div>
                   <div class="post-meta">
