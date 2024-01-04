@@ -103,7 +103,9 @@ msgstr ""
 
 #: templates/sections/greetings.html:12
 msgid "greetings message"
-msgstr ""
+msgstr "<p>Hello there!</p>"
+"<p>Thank you for visiting Cho'girmali Blog. This is a space where we delve into various topics, share insights, and create a community of curious minds.</p>"
+"<p>Feel free to explore our latest articles and engage in discussions. We hope you find inspiration and knowledge within these virtual pages.</p>"
 
 #: templates/sections/greetings.html:14
 msgid "About more"

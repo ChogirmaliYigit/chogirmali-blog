@@ -103,7 +103,9 @@ msgstr "Cho'girmali Blog ga Xush kelibsiz!"
 
 #: templates/sections/greetings.html:12
 msgid "greetings message"
-msgstr ""
+msgstr "<p>Assalomu alaykum!</p>"
+"<p>Cho'girmali Blogga tashrif buyurganingiz uchun tashakkur. Bu yerda biz turli mavzularni o'rganamiz, tushunchalar almashamiz va qiziquvchilar hamjamiyatini yaratamiz.</p>"
+"<p>Eng so'nggi maqolalarimizni o'qing va muhokamalarda qatnashing. Umid qilamizki, siz ushbu virtual sahifalarda ilhom va bilim topasiz.</p>"
 
 #: templates/sections/greetings.html:14
 msgid "About more"
