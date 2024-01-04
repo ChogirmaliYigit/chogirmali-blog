@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% load i18n %}
+{% load google_analytics %}
 
 {% get_current_language as current_language %}
 <html style="font-family: 'Roboto', sans-serif;" lang="{{ current_language }}">
@@ -79,6 +80,16 @@
 
     <!-- Template Main JS File -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={% google_analytics_id %}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{% google_analytics_id %}');
+    </script>
 
     {% block extra_scripts %} {% endblock extra_scripts %}
 </body>
