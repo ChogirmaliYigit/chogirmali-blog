@@ -124,12 +124,12 @@ AUTH_PASSWORD_VALIDATORS = [
 EN = "en"
 UZ = "uz"
 
-SUPPORTED_LANGUAGES = (
-    (UZ, _("uzbek")),
+LANGUAGES = (
     (EN, _("english")),
+    (UZ, _("uzbek")),
 )
 
-LANGUAGE_CODE = 'uz'
+LANGUAGE_CODE = 'en'
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',

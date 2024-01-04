@@ -20,7 +20,7 @@ class Post(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to="posts/", null=True, blank=True)
     status = models.CharField(max_length=100, choices=STATUSES, default=STAGING)
-    language = models.CharField(max_length=10, choices=settings.SUPPORTED_LANGUAGES, default=settings.EN)
+    language = models.CharField(max_length=10, choices=settings.LANGUAGES, default=settings.EN)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -67,7 +67,7 @@ class AboutMeSections(models.Model):
     title = models.CharField(max_length=500)
     content = models.TextField()
     status = models.CharField(max_length=20, choices=STATUSES, default=STAGING)
-    language = models.CharField(max_length=10, choices=settings.SUPPORTED_LANGUAGES, default=settings.EN)
+    language = models.CharField(max_length=10, choices=settings.LANGUAGES, default=settings.EN)
 
     class Meta:
         db_table = "about_me"
