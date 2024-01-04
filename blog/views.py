@@ -29,14 +29,17 @@ class PostDetailView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated and self.request.user.is_staff:
-            post = get_object_or_404(Post, pk=context.get("pk"), language=get_language())
+            post = Post.objects.filter(pk=context.get("pk"), language=get_language()).first()
+            if not post:
+                post = get_object_or_404(Post, alternative__pk=context.get("pk"), language=get_language())
             context["previous_post"] = post.previous(is_production=False)
             context["next_post"] = post.next(is_production=False)
         else:
-            post = get_object_or_404(Post, pk=context.get("pk"), status=PRODUCTION, language=get_language())
-            if post:
-                context["previous_post"] = post.previous()
-                context["next_post"] = post.next()
+            post = Post.objects.filter(pk=context.get("pk"), status=PRODUCTION, language=get_language()).first()
+            if not post:
+                post = get_object_or_404(Post, alternative__pk=context.get("pk"), language=get_language())
+            context["previous_post"] = post.previous()
+            context["next_post"] = post.next()
         context["post"] = post
         return context
 

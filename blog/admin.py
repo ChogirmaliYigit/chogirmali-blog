@@ -5,7 +5,7 @@ from blog.models import Post, AboutMeSections
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ("title", "truncated_content", "status", "language", )
-    fields = ("title", "content", "image", "status", "language", )
+    fields = ("title", "content", "image", "status", "language", "alternative", )
     search_fields = ("title", "content", )
     list_filter = ("language", "status", )
 
@@ -19,7 +19,7 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(AboutMeSections)
 class AboutMeSectionsAdmin(admin.ModelAdmin):
     list_display = ("meta", "title", "truncated_content", "status", "language", )
-    fields = ("meta", "title", "content", "image", "status", "language", )
+    fields = ("meta", "title", "content", "image", "status", "language", "alternative", )
     search_fields = ("meta", "title", "content", )
     list_filter = ("language", "status", )
 
