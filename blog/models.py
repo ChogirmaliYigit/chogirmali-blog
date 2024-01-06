@@ -48,7 +48,10 @@ class Post(models.Model):
         )
         if is_production:
             query.filter(status=PRODUCTION)
-        return query.order_by('-created_at').first()
+        previous = query.order_by('-created_at').first()
+        if previous != self.alternative:
+            return previous
+        return
 
     def next(self, is_production: bool = True):
         query = Post.objects.filter(
@@ -56,7 +59,10 @@ class Post(models.Model):
         )
         if is_production:
             query.filter(status=PRODUCTION)
-        return query.order_by('created_at').first()
+        next_post = query.order_by('created_at').first()
+        if next_post != self.alternative:
+            return next_post
+        return
 
     class Meta:
         db_table = "blog_posts"
@@ -84,3 +90,15 @@ class AboutMeSections(models.Model):
     def formatted_title(self):
         md = markdown.Markdown(extensions=["fenced_code"])
         return md.convert(str(self.title))
+
+
+class Comment(models.Model):
+    email = models.EmailField()
+    content = models.TextField()
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    reply_to = models.ForeignKey("self", on_delete=models.CASCADE, null=True, blank=True, related_name="replied_comments")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = "blog_comments"

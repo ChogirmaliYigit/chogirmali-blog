@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from django.db.models import Q
 from django.shortcuts import redirect, render, get_object_or_404
 from django.utils.translation import get_language
-from blog.models import Post, AboutMeSections, PRODUCTION
+from blog.models import Post, AboutMeSections, PRODUCTION, Comment
 from blog.utils import send_contact_info_to_telegram_chat
 
 
@@ -42,6 +42,10 @@ class PostDetailView(TemplateView):
             context["next_post"] = post.next()
         context["post"] = post
         return context
+
+    def post(self, request, pk, *args, **kwargs):
+        Comment.objects.create(email=request.POST.get("email"), content=request.POST.get("message"), post_id=pk)
+        return redirect("post-detail", pk=pk)
 
 
 class ContactView(TemplateView):

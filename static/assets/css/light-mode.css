@@ -1051,6 +1051,10 @@ section {
   margin-bottom: 30px;
 }
 
+.comment-replies {
+  background-color: #f8f9fa;
+}
+
 .comment .comment-meta .text-muted,
 .comment .reply-meta .text-muted {
   font-family: var(--font-secondary);

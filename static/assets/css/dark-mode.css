@@ -1078,10 +1078,20 @@ section {
   margin-bottom: 30px;
 }
 
-.comment .comment-meta .text-muted,
-.comment .reply-meta .text-muted {
-  font-family: var(--font-roboto);
-  font-size: 12px;
+.comment-replies {
+  background-color: var(--color-gray);
+}
+
+input#comment-email::placeholder,
+textarea#comment-message::placeholder {
+  color: var(--color-gray);
+}
+
+input#comment-email,
+textarea#comment-message {
+  border: 0.5px solid var(--color-gray);
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 /*--------------------------------------------------------------

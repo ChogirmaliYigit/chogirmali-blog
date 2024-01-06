@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Post, AboutMeSections
+from blog.models import Post, AboutMeSections, Comment
 
 
 @admin.register(Post)
@@ -28,3 +28,6 @@ class AboutMeSectionsAdmin(admin.ModelAdmin):
         return (obj.content[:max_length] + '...') if len(obj.content) > max_length else obj.content
 
     truncated_content.short_description = 'Content'
+
+
+admin.site.register(Comment)
