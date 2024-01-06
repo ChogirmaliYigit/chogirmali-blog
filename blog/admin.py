@@ -1,9 +1,10 @@
 from django.contrib import admin
 from blog.models import Post, AboutMeSections, Comment
+from unfold.admin import ModelAdmin
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(ModelAdmin):
     list_display = ("title", "truncated_content", "status", "language", )
     fields = ("title", "content", "image", "status", "language", "alternative", )
     search_fields = ("title", "content", )
@@ -17,11 +18,13 @@ class PostAdmin(admin.ModelAdmin):
 
 
 @admin.register(AboutMeSections)
-class AboutMeSectionsAdmin(admin.ModelAdmin):
+class AboutMeSectionsAdmin(ModelAdmin):
     list_display = ("meta", "title", "truncated_content", "status", "language", )
     fields = ("meta", "title", "content", "image", "status", "language", "alternative", )
     search_fields = ("meta", "title", "content", )
     list_filter = ("language", "status", )
+
+    list_filter_submit = True
 
     def truncated_content(self, obj):
         max_length = 80
@@ -30,4 +33,16 @@ class AboutMeSectionsAdmin(admin.ModelAdmin):
     truncated_content.short_description = 'Content'
 
 
-admin.site.register(Comment)
+@admin.register(Comment)
+class CommentAdmin(ModelAdmin):
+    list_display = ("email", "truncated_content", "post", "reply_to", )
+    fields = ("email", "content", "post", "reply_to", )
+    search_fields = ("email", "content", )
+
+    list_filter_submit = True
+
+    def truncated_content(self, obj):
+        max_length = 80
+        return (obj.content[:max_length] + '...') if len(obj.content) > max_length else obj.content
+
+    truncated_content.short_description = 'Content'

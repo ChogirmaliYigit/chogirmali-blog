@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 22:32+0500\n"
+"POT-Creation-Date: 2024-01-06 23:38+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: config/settings.py:128 templates/includes/navbar.html:29
-#: templates/includes/navbar.html:32
+#: config/settings.py:132 templates/includes/navbar.html:30
+#: templates/includes/navbar.html:33
 msgid "english"
 msgstr "Ingliz"
 
-#: config/settings.py:129 templates/includes/navbar.html:29
-#: templates/includes/navbar.html:33
+#: config/settings.py:133 templates/includes/navbar.html:30
+#: templates/includes/navbar.html:34
 msgid "uzbek"
 msgstr "O'zbek"
 
@@ -32,27 +32,27 @@ msgstr "O'zbek"
 msgid "read more"
 msgstr "Ko'proq o'qish"
 
-#: templates/blog/post_detail.html:145
+#: templates/blog/post_detail.html:107
 msgid "Previous"
 msgstr "Oldingi"
 
-#: templates/blog/post_detail.html:150
+#: templates/blog/post_detail.html:112
 msgid "Next"
 msgstr "Keyingi"
 
-#: templates/blog/search.html:30 templates/includes/navbar.html:51
+#: templates/blog/search.html:30 templates/includes/navbar.html:52
 msgid "Search"
 msgstr "Qidirish"
 
-#: templates/includes/footer.html:12
+#: templates/includes/footer.html:13
 msgid "Template"
 msgstr "Shablon"
 
-#: templates/includes/navbar.html:19
+#: templates/includes/navbar.html:21
 msgid "About"
 msgstr "Haqida"
 
-#: templates/includes/navbar.html:20
+#: templates/includes/navbar.html:22
 msgid "Contact"
 msgstr "Bog'lanish"
 
@@ -103,9 +103,12 @@ msgstr "Cho'girmali Blog ga Xush kelibsiz!"
 
 #: templates/sections/greetings.html:12
 msgid "greetings message"
-msgstr "<p>Assalomu alaykum!</p>"
-"<p>Cho'girmali Blogga tashrif buyurganingiz uchun tashakkur. Bu yerda biz turli mavzularni o'rganamiz, tushunchalar almashamiz va qiziquvchilar hamjamiyatini yaratamiz.</p>"
-"<p>Eng so'nggi maqolalarimizni o'qing va muhokamalarda qatnashing. Umid qilamizki, siz ushbu virtual sahifalarda ilhom va bilim topasiz.</p>"
+msgstr ""
+"<p>Assalomu alaykum!</p><p>Cho'girmali Blogga tashrif buyurganingiz uchun "
+"tashakkur. Bu yerda biz turli mavzularni o'rganamiz, tushunchalar almashamiz "
+"va qiziquvchilar hamjamiyatini yaratamiz.</p><p>Eng so'nggi maqolalarimizni "
+"o'qing va muhokamalarda qatnashing. Umid qilamizki, siz ushbu virtual "
+"sahifalarda ilhom va bilim topasiz.</p>"
 
 #: templates/sections/greetings.html:14
 msgid "About more"
@@ -115,11 +118,17 @@ msgstr "Ko'proq"
 msgid ""
 "Thanks for contacting me! I will contact you soon with your details if they "
 "are correct."
-msgstr "Men bilan bog'langaningiz uchun tashakkur! Agar ma'lumotlar to'g'ri bo'lsa, tez orada siz bilan bog'lanaman."
+msgstr ""
+"Men bilan bog'langaningiz uchun tashakkur! Agar ma'lumotlar to'g'ri bo'lsa, "
+"tez orada siz bilan bog'lanaman."
 
 #: templates/sections/thanks-for-contacting.html:87
 msgid "Go to home"
 msgstr "Bosh sahifaga"
+
+#: templates/includes/footer.html:10
+msgid "There is no copyright, you can see my code on <a href='{% github_repo %}'>GitHub</a>, and it's free to reuse 🙂"
+msgstr "Hech qanday mualliflik huquqi yo‘q, kodni <a href='{% github_repo %}'>GitHub</a> da ko‘rishingiz mumkin va undan qayta foydalanish bepul 🙂"
 
 #: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -762,6 +771,7 @@ msgid "Unknown"
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/forms/widgets.py:795
+#: venv/lib/python3.11/site-packages/telepath/tests.py:243
 msgid "Yes"
 msgstr ""
 

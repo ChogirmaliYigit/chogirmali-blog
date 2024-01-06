@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-03 22:32+0500\n"
+"POT-Creation-Date: 2024-01-06 23:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:128 templates/includes/navbar.html:29
-#: templates/includes/navbar.html:32
+#: config/settings.py:132 templates/includes/navbar.html:30
+#: templates/includes/navbar.html:33
 msgid "english"
 msgstr "English"
 
-#: config/settings.py:129 templates/includes/navbar.html:29
-#: templates/includes/navbar.html:33
+#: config/settings.py:133 templates/includes/navbar.html:30
+#: templates/includes/navbar.html:34
 msgid "uzbek"
 msgstr "Uzbek"
 
@@ -32,27 +32,27 @@ msgstr "Uzbek"
 msgid "read more"
 msgstr ""
 
-#: templates/blog/post_detail.html:145
+#: templates/blog/post_detail.html:107
 msgid "Previous"
 msgstr ""
 
-#: templates/blog/post_detail.html:150
+#: templates/blog/post_detail.html:112
 msgid "Next"
 msgstr ""
 
-#: templates/blog/search.html:30 templates/includes/navbar.html:51
+#: templates/blog/search.html:30 templates/includes/navbar.html:52
 msgid "Search"
 msgstr ""
 
-#: templates/includes/footer.html:12
+#: templates/includes/footer.html:13
 msgid "Template"
 msgstr ""
 
-#: templates/includes/navbar.html:19
+#: templates/includes/navbar.html:21
 msgid "About"
 msgstr ""
 
-#: templates/includes/navbar.html:20
+#: templates/includes/navbar.html:22
 msgid "Contact"
 msgstr ""
 
@@ -103,9 +103,12 @@ msgstr ""
 
 #: templates/sections/greetings.html:12
 msgid "greetings message"
-msgstr "<p>Hello there!</p>"
-"<p>Thank you for visiting Cho'girmali Blog. This is a space where we delve into various topics, share insights, and create a community of curious minds.</p>"
-"<p>Feel free to explore our latest articles and engage in discussions. We hope you find inspiration and knowledge within these virtual pages.</p>"
+msgstr ""
+"<p>Hello there!</p><p>Thank you for visiting Cho'girmali Blog. This is a "
+"space where we delve into various topics, share insights, and create a "
+"community of curious minds.</p><p>Feel free to explore our latest articles "
+"and engage in discussions. We hope you find inspiration and knowledge within "
+"these virtual pages.</p>"
 
 #: templates/sections/greetings.html:14
 msgid "About more"
@@ -119,6 +122,10 @@ msgstr ""
 
 #: templates/sections/thanks-for-contacting.html:87
 msgid "Go to home"
+msgstr ""
+
+#: templates/includes/footer.html:10
+msgid "There is no copyright, you can see my code on <a href='{% github_repo %}'>GitHub</a>, and it's free to reuse 🙂"
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:15
@@ -758,6 +765,7 @@ msgid "Unknown"
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/forms/widgets.py:795
+#: venv/lib/python3.11/site-packages/telepath/tests.py:243
 msgid "Yes"
 msgstr ""
 

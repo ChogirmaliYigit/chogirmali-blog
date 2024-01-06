@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from environs import Env
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse_lazy
 
 env = Env()
 env.read_env()
@@ -37,12 +38,19 @@ TELEGRAM_BOT_TOKEN = env.str("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = env.str("TELEGRAM_CHAT_ID", "")
 GOOGLE_ANALYTICS_ID = env.str("GOOGLE_ANALYTICS_ID", "")
 
+GITHUB_REPO = "https://github.com/ChogirmaliYigit/chogirmali-blog"
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    "jazzmin",
-    'django.contrib.admin',
+    "unfold",  # before django.contrib.admin
+    "unfold.contrib.filters",  # optional, if special filters are needed
+    "unfold.contrib.forms",  # optional, if special form elements are needed
+    "unfold.contrib.import_export",  # optional, if django-import-export package is used
+    "unfold.contrib.guardian",  # optional, if django-guardian package is used
+    "unfold.contrib.simple_history",  # optional, if django-simple-history package is used
+    "django.contrib.admin",
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -165,38 +173,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 100 * 1024 * 1024
 
-JAZZMIN_SETTINGS = {
-    "show_ui_builder": True,
-}
-
-JAZZMIN_UI_TWEAKS = {
-    "navbar_small_text": False,
-    "footer_small_text": False,
-    "body_small_text": True,
-    "brand_small_text": False,
-    "brand_colour": "navbar-info",
-    "accent": "accent-info",
-    "navbar": "navbar-primary navbar-dark",
-    "no_navbar_border": True,
-    "navbar_fixed": True,
-    "layout_boxed": False,
-    "footer_fixed": False,
-    "sidebar_fixed": True,
-    "sidebar": "sidebar-dark-primary",
-    "sidebar_nav_small_text": False,
-    "sidebar_disable_expand": False,
-    "sidebar_nav_child_indent": False,
-    "sidebar_nav_compact_style": True,
-    "sidebar_nav_legacy_style": False,
-    "sidebar_nav_flat_style": False,
-    "theme": "darkly",
-    "dark_mode_theme": None,
-    "button_classes": {
-        "primary": "btn-primary",
-        "secondary": "btn-outline-secondary",
-        "info": "btn-outline-info",
-        "warning": "btn-outline-warning",
-        "danger": "btn-outline-danger",
-        "success": "btn-success"
-    }
+UNFOLD = {
+    "show_search": True,
+    "show_all_applications": True,
+    "navigation": [
+        {
+            "title": _("Navigation"),
+            "separator": True,
+            "items": [
+                {
+                    "title": _("Dashboard"),
+                    "icon": "dashboard",
+                    "link": reverse_lazy("admin:index"),
+                    "permission": lambda request: request.user.is_superuser,
+                },
+                {
+                    "title": _("Users"),
+                    "icon": "people",
+                    "link": reverse_lazy("admin:users_user_changelist"),
+                },
+            ],
+        },
+    ],
 }
