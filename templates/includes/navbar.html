@@ -60,7 +60,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
             if (window.location.pathname === '/') {
-                const defaultLanguage = "{% get_language_code %}";
+                const defaultLanguage = "{% get_current_language %}";
                 const defaultLanguageUrl = `/${defaultLanguage}/`;
 
                 // Redirect to the default language URL
