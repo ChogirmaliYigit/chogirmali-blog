@@ -59,6 +59,14 @@
 {% block extra_scripts %}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+            if (window.location.pathname === '/') {
+                const defaultLanguage = "{% get_language_code %}";
+                const defaultLanguageUrl = `/${defaultLanguage}/`;
+
+                // Redirect to the default language URL
+                window.location.href = defaultLanguageUrl;
+            }
+
             // Check if the user has a theme preference saved in local storage
             const isDarkMode = localStorage.getItem("darkMode") === "true";
 
@@ -124,7 +132,7 @@
 
             function updateUrlLanguage(url, newLanguage) {
                 // Extract the current language code from the URL
-                const languageMatch = url.match(/\/([a-z]{2})\//i);
+                const languageMatch = url.match(/\/(en|uz)\//i);
 
                 if (languageMatch && languageMatch[1]) {
                     const currentLanguage = languageMatch[1];
