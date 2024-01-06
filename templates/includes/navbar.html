@@ -61,8 +61,14 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
             if (window.location.pathname === '/') {
-                // Redirect to the default language URL
-                window.location.href = "/{{current_language}}/";
+                const defaultLanguage = localStorage.getItem("languageCode")
+                if (defaultLanguage) {
+                    window.location.href = defaultLanguage;
+                } else {
+                    // Redirect to the default language URL
+                    window.location.href = "/{{ current_language }}/";
+                    localStorage.setItem("languageCode", "{{ current_language }}");
+                }
             }
 
             // Check if the user has a theme preference saved in local storage
