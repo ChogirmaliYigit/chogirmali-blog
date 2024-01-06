@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="{% static 'assets/css/theme-switcher.css' %}">
 {% endblock extra_styles %}
 
+{% get_current_language as current_language %}
+
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
@@ -25,7 +27,6 @@
             <div class="dropdown" style="margin-right: 10px;" id="languageDropdownContainer">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    {% get_current_language as current_language %}
                     {% if current_language == 'en' %} {% trans "english" %} {% else %} {% trans "uzbek" %} {% endif %}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="languageDropdown">
@@ -60,11 +61,8 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
             if (window.location.pathname === '/') {
-                const defaultLanguage = "{% get_current_language %}";
-                const defaultLanguageUrl = `/${defaultLanguage}/`;
-
                 // Redirect to the default language URL
-                window.location.href = defaultLanguageUrl;
+                window.location.href = "/{{current_language}}/";
             }
 
             // Check if the user has a theme preference saved in local storage
