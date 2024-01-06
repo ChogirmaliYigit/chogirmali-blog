@@ -131,7 +131,7 @@ LANGUAGES = (
     (UZ, _("uzbek")),
 )
 
-LANGUAGE_CODE = 'uz'
+LANGUAGE_CODE = 'en-us'
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
