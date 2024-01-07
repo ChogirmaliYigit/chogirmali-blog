@@ -1,4 +1,4 @@
-import markdown
+import markdown as md
 
 from django import template
 from django.conf import settings
@@ -24,5 +24,4 @@ def github_repo():
 
 @register.filter
 def markdown(value):
-    md = markdown.Markdown(extensions=["fenced_code"])
-    return mark_safe(md.convert(str(value)))
+    return mark_safe(md.Markdown(extensions=["fenced_code"]).convert(str(value)))
