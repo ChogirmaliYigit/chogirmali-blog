@@ -1676,7 +1676,7 @@ msgstr "Sanagacha"
 #: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_numeric_slider.html:7
 #, python-format
 msgid "By %(filter_title)s"
-msgstr "Bo'yicha"
+msgstr "Bo'yicha %(filter_title)s"
 
 #: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_numeric_slider.html:30
 msgid "Not enough data."
