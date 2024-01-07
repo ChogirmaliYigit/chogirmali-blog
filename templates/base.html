@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% load i18n %}
-{% load custom_variables %}
+{% load custom_filters %}
 
 {% get_current_language as current_language %}
 <html style="font-family: 'Roboto', sans-serif;" lang="{{ current_language }}">
@@ -37,12 +37,22 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Github Markdown CSS -->
+    <!-- GitHub Markdown CSS -->
     <link href="{% static 'assets/css/markdown-light.css' %}" rel="stylesheet" id="markdown-theme">
 
     <!-- Template Main CSS Files -->
     <link href="{% static 'assets/css/variables.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/light-mode.css' %}" rel="stylesheet" id="theme-style">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','{% google_tag_manager_id %}');
+    </script>
+    <!-- End Google Tag Manager -->
 
     {% block extra_styles %} {% endblock extra_styles %}
 
@@ -90,6 +100,13 @@
 
       gtag('config', '{% google_analytics_id %}');
     </script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={% google_tag_manager_id %}"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     {% block extra_scripts %} {% endblock extra_scripts %}
 </body>

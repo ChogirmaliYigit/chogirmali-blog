@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+{% load custom_filters %}
 
 {% block content %}
   <main id="main">
@@ -24,8 +25,7 @@
             {% endif %}
             <div class="col-md-9 mt-4 mt-md-0">
               {% if section.meta %}<div class="post-meta mt-4">{{ section.meta }}</div>{% endif %}
-              <h2 class="mb-4 display-4">{{ section.title }}</h2>
-              <p>{{ section.content }}</p>
+              <p>{{ section.content|markdown }}</p>
             </div>
           </div>
           {% empty %}

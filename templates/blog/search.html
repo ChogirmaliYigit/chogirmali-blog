@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+{% load custom_filters %}
 
 {% block extra_styles %}
 <style>
@@ -34,18 +35,12 @@
 
             {% for result in results %}
               <div class="d-md-flex post-entry-2 small-img">
-                <div class="me-4 thumbnail text-sm-center">
-                  <img src="{% if result.image %} {{ result.image.url }} {% else %} {% static 'assets/img/no-image.jpeg' %} {% endif %}" alt="{{ result.formatted_title|safe }}" title="{{ result.formatted_title|safe }}" class="post-img img-fluid">
+                <div class="post-meta">
+                  <!-- <span class="date">Business</span>
+                  <span class="mx-1">&bullet;</span> -->
+                  <span class="date">{{ result.updated_at|date }}</span>
                 </div>
-                <div>
-                  <div class="post-meta">
-                    <!-- <span class="date">Business</span>
-                    <span class="mx-1">&bullet;</span> -->
-                    <span class="date">{{ result.updated_at|date }}</span>
-                  </div>
-                  <h3><a href="{% url 'post-detail' result.pk %}">{{ result.formatted_title|safe|truncatechars:40 }}</a></h3>
-                  <p>{{ result.formatted_content|safe|truncatechars:100 }}</p>
-                </div>
+                <p><a href="{% url 'post-detail' result.pk %}">{{ result.content|markdown|truncatechars:100 }}</a></p>
               </div>
             {% empty %}
               {% include 'includes/no-content.html' %}

@@ -5,9 +5,9 @@ from unfold.admin import ModelAdmin
 
 @admin.register(Post)
 class PostAdmin(ModelAdmin):
-    list_display = ("title", "truncated_content", "status", "language", )
-    fields = ("title", "content", "image", "status", "language", "alternative", )
-    search_fields = ("title", "content", )
+    list_display = ("truncated_content", "status", "language", )
+    fields = ("content", "status", "language", "alternative", )
+    search_fields = ("content", )
     list_filter = ("language", "status", )
 
     def truncated_content(self, obj):
@@ -19,9 +19,9 @@ class PostAdmin(ModelAdmin):
 
 @admin.register(AboutMeSections)
 class AboutMeSectionsAdmin(ModelAdmin):
-    list_display = ("meta", "title", "truncated_content", "status", "language", )
-    fields = ("meta", "title", "content", "image", "status", "language", "alternative", )
-    search_fields = ("meta", "title", "content", )
+    list_display = ("meta", "truncated_content", "status", "language", )
+    fields = ("meta", "content", "image", "status", "language", "alternative", )
+    search_fields = ("meta", "content", )
     list_filter = ("language", "status", )
 
     list_filter_submit = True

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+{% load custom_filters %}
 
 {% block extra_styles %}
 <style>
@@ -25,16 +26,12 @@
         <div class="row">
           <div class="col-md-12 post-content" data-aos="fade-up">
             <div class="single-post markdown-body">
-              <figure class="my-4 text-center">
-                <img src="{% if post.image %}{{ post.image.url }}{% else %}{% static 'assets/img/no-image.jpeg' %}{% endif %}" alt="{{ post.formatted_title|striptags|safe }}" title="{{ post.formatted_title|striptags|safe }}" class="img-fluid post-img">
-              </figure>
               <div class="post-meta">
                 <!-- <span class="date">Business</span>
                 <span class="mx-1">&bullet;</span> -->
                 <span class="date">{{ post.updated_at|date }}</span>
               </div>
-              <h1 class="mb-5">{{ post.formatted_title|safe }}</h1>
-              <p>{{ post.formatted_content|safe }}</p>
+              <p>{{ post.content|markdown }}</p>
             </div>
 
             {% comment %}

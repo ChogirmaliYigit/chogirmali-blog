@@ -37,6 +37,7 @@ ALLOWED_HOSTS = env.str("ALLOWED_HOSTS", []).split(',')
 TELEGRAM_BOT_TOKEN = env.str("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = env.str("TELEGRAM_CHAT_ID", "")
 GOOGLE_ANALYTICS_ID = env.str("GOOGLE_ANALYTICS_ID", "")
+GOOGLE_TAG_MANAGER_ID = env.str("GOOGLE_TAG_MANAGER_ID", "")
 
 GITHUB_REPO = "https://github.com/ChogirmaliYigit/chogirmali-blog"
 

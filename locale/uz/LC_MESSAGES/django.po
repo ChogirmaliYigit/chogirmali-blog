@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 23:38+0500\n"
+"POT-Creation-Date: 2024-01-07 21:28+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,33 +18,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: config/settings.py:132 templates/includes/navbar.html:30
+#: config/settings.py:139 templates/includes/navbar.html:30
 #: templates/includes/navbar.html:33
 msgid "english"
 msgstr "Ingliz"
 
-#: config/settings.py:133 templates/includes/navbar.html:30
+#: config/settings.py:140 templates/includes/navbar.html:30
 #: templates/includes/navbar.html:34
 msgid "uzbek"
 msgstr "O'zbek"
 
-#: templates/blog/blog.html:56
+#: config/settings.py:182
+msgid "Navigation"
+msgstr ""
+
+#: config/settings.py:186
+msgid "Dashboard"
+msgstr ""
+
+#: config/settings.py:192
+msgid "Users"
+msgstr "Foydalanuvchilar"
+
+#: templates/blog/blog.html:48
 msgid "read more"
 msgstr "Ko'proq o'qish"
 
-#: templates/blog/post_detail.html:107
+#: templates/blog/post_detail.html:104
 msgid "Previous"
 msgstr "Oldingi"
 
-#: templates/blog/post_detail.html:112
+#: templates/blog/post_detail.html:109
 msgid "Next"
 msgstr "Keyingi"
 
-#: templates/blog/search.html:30 templates/includes/navbar.html:52
+#: templates/blog/search.html:31 templates/includes/navbar.html:52
 msgid "Search"
 msgstr "Qidirish"
 
-#: templates/includes/footer.html:13
+#: templates/errors/404.html:14
+msgid "We couldn't find the page you were looking for."
+msgstr "Siz qidirgan sahifani topa olmadik."
+
+#: templates/includes/footer.html:12
+msgid ""
+"There is no copyright, you can see my code on <a href='{{ repo }}'>GitHub</"
+"a>, and it's free to reuse 🙂"
+msgstr ""
+"Hech qanday mualliflik huquqi yo‘q, kodni <a href='{{ repo }}'>GitHub</a> da "
+"ko‘rishingiz mumkin va undan qayta foydalanish bepul 🙂"
+
+#: templates/includes/footer.html:15
 msgid "Template"
 msgstr "Shablon"
 
@@ -60,7 +84,7 @@ msgstr "Bog'lanish"
 msgid "Unfortunately, there is no information yet 😔"
 msgstr "Afsuski hozircha ma'lumotlar yo'q 😔"
 
-#: templates/sections/about.html:12
+#: templates/sections/about.html:13
 msgid "About me"
 msgstr "Men haqimda"
 
@@ -123,12 +147,281 @@ msgstr ""
 "tez orada siz bilan bog'lanaman."
 
 #: templates/sections/thanks-for-contacting.html:87
-msgid "Go to home"
+msgid "Go home"
 msgstr "Bosh sahifaga"
 
-#: templates/includes/footer.html:10
-msgid "There is no copyright, you can see my code on <a href='{% github_repo %}'>GitHub</a>, and it's free to reuse 🙂"
-msgstr "Hech qanday mualliflik huquqi yo‘q, kodni <a href='{% github_repo %}'>GitHub</a> da ko‘rishingiz mumkin va undan qayta foydalanish bepul 🙂"
+#: venv/lib/python3.11/site-packages/click/_termui_impl.py:518
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/_termui_impl.py:522
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1120
+msgid "Aborted!"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1309
+#: venv/lib/python3.11/site-packages/click/decorators.py:559
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1340
+#: venv/lib/python3.11/site-packages/click/core.py:1370
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1387
+msgid "Options"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1413
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1429
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1636
+msgid "Commands"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1668
+msgid "Missing command."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:1746
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:2310
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:2331
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:2778
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:2808
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:2821
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/core.py:2834
+msgid "required"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/decorators.py:528
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:44
+#: venv/lib/python3.11/site-packages/click/exceptions.py:80
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:72
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:121
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:123
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:179
+msgid "Missing argument"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:181
+msgid "Missing option"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:183
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:185
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:192
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:212
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:224
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:262
+msgid "unknown error"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/exceptions.py:269
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/parser.py:474
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/click/shell_completion.py:319
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/shell_completion.py:326
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/termui.py:158
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/termui.py:243
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/termui.py:773
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:266
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:298
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:392
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:414
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:470
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:611
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:635
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:822
+msgid "file"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:824
+msgid "directory"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:826
+msgid "path"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:877
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:886
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:894
+#, python-brace-format
+msgid "{name} '{filename}' is a directory."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:903
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:912
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:921
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/click/types.py:988
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
 
 #: venv/lib/python3.11/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -517,8 +810,11 @@ msgid ""
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2456
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:113
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:129
+#: venv/lib/python3.11/site-packages/unfold/widgets.py:415
 msgid "Time"
-msgstr ""
+msgstr "Vaqt"
 
 #: venv/lib/python3.11/site-packages/django/db/models/fields/__init__.py:2564
 msgid "URL"
@@ -710,8 +1006,10 @@ msgid "Order"
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/forms/formsets.py:499
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_preview.html:26
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:53
 msgid "Delete"
-msgstr ""
+msgstr "O'chirish"
 
 #: venv/lib/python3.11/site-packages/django/forms/models.py:886
 #, python-format
@@ -763,12 +1061,14 @@ msgid "Currently"
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/forms/widgets.py:465
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list_default.html:47
 msgid "Change"
-msgstr ""
+msgstr "O'zgartirish"
 
 #: venv/lib/python3.11/site-packages/django/forms/widgets.py:794
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/boolean.html:8
 msgid "Unknown"
-msgstr ""
+msgstr "No'malum"
 
 #: venv/lib/python3.11/site-packages/django/forms/widgets.py:795
 #: venv/lib/python3.11/site-packages/telepath/tests.py:243
@@ -1336,4 +1636,759 @@ msgstr ""
 
 #: venv/lib/python3.11/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/admin.py:298
+#: venv/lib/python3.11/site-packages/unfold/admin.py:319
+msgid "Select value"
+msgstr "Qiymat tanlang"
+
+#: venv/lib/python3.11/site-packages/unfold/admin.py:650
+msgid "Select action"
+msgstr "Harakat tanlang"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:16
+msgid "Value"
+msgstr "Qiymat"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:32
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:72
+msgid "From"
+msgstr "Dan"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:39
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:82
+msgid "To"
+msgstr "Gacha"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:108
+msgid "Date from"
+msgstr "Sana dan"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/forms.py:124
+msgid "Date to"
+msgstr "Sanagacha"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_date_range.html:5
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_datetime_range.html:5
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_numeric_range.html:5
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_numeric_single.html:5
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_numeric_slider.html:7
+#, python-format
+msgid "By %(filter_title)s"
+msgstr "Bo'yicha"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/filters/templates/unfold/filters/filters_numeric_slider.html:30
+msgid "Not enough data."
+msgstr "Yetarlicha ma'lumot yo'q."
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:7
+msgid "Paragraph"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:11
+msgid "Underlined"
+msgstr "Pastiga chizilgan"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:15
+msgid "Bold"
+msgstr "Qalin"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:19
+msgid "Italic"
+msgstr "Yotiq"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:23
+msgid "Strike"
+msgstr "Ustidan chizilgan"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:27
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:98
+msgid "Link"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:35
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:39
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:43
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:47
+msgid "Heading"
+msgstr "Sarlavha"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:55
+msgid "Quote"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:59
+msgid "Code"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:63
+msgid "Unordered list"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:67
+msgid "Ordered list"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:71
+msgid "Indent increase"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:75
+msgid "Indent decrease"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:83
+msgid "Undo"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:87
+msgid "Redo"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:95
+#, fuzzy
+#| msgid "Enter a valid URL."
+msgid "Enter an URL"
+msgstr "To'g'ri URL kiriting"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/forms/templates/unfold/forms/helpers/toolbar.html:102
+msgid "Unlink"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/change_form.html:8
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage.html:22
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_group.html:25
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_user.html:26
+msgid "Object permissions"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage.html:10
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_group.html:13
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_user.html:14
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/export.html:17
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import.html:28
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history_form.html:11
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/app_index.html:15
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/auth/user/change_password.html:13
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/base.html:23
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_form.html:21
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_list.html:36
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:17
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:17
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:9
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_done.html:12
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_form.html:12
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/site_icon.html:6
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/site_icon.html:8
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/site_icon.html:10
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/site_logo.html:5
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/site_logo.html:7
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/site_logo.html:9
+msgid "Home"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_group.html:39
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_user.html:40
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:10
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:40
+#, fuzzy
+#| msgid "Subject"
+msgid "Object"
+msgstr "Mavzu"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_group.html:42
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:15
+msgid "Group"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_group.html:49
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_user.html:50
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/pagination.html:35
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:10
+msgid "Save"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/admin/guardian/model/obj_perms_manage_user.html:43
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:33
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:15
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:33
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:38
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:54
+msgid "User"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:7
+msgid "Group permissions"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:25
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:49
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:25
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:49
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:42
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:58
+msgid "Action"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:51
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:51
+msgid "Edit"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/group_form.html:67
+msgid "Manage group"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:7
+msgid "User permissions"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/guardian/templates/unfold/guardian/user_form.html:67
+msgid "Manage user"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/change_list_export_item.html:4
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/export.html:28
+msgid "Export"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/change_list_import_item.html:4
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import.html:39
+msgid "Import"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/export.html:44
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_form.html:32
+msgid "Submit"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_confirm.html:10
+msgid ""
+"Below is a preview of data to be imported. If you are satisfied with the "
+"results, click 'Confirm import'"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_confirm.html:15
+msgid "Confirm import"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_errors.html:19
+#, fuzzy
+#| msgid "Phone Number"
+msgid "Line number"
+msgstr "Telefon raqam"
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_form.html:8
+msgid "This importer will import the following fields: "
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_preview.html:22
+msgid "New"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_preview.html:24
+msgid "Skipped"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_preview.html:28
+msgid "Update"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:7
+msgid "Some rows failed to validate"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:13
+msgid ""
+"Please correct these errors in your data where possible, then reupload it "
+"using the form above."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:22
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:40
+msgid "Row"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:26
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:44
+msgid "Errors"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/import_export/templates/admin/import_export/import_validation.html:65
+msgid "Non field specific"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:20
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:52
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:34
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:50
+msgid "Date/time"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:24
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:56
+msgid "Comment"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:28
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:60
+msgid "Changed by"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:32
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:74
+msgid "Change reason"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/_object_history_list.html:70
+msgid "None"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history.html:10
+msgid ""
+"Choose a date from the list below to revert to a previous version of this "
+"object."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history.html:18
+msgid "This object doesn't have a change history."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history_form.html:22
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_form_object_tools.html:6
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:21
+msgid "History"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history_form.html:26
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list_default.html:41
+msgid "View"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history_form.html:29
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/submit_line.html:9
+msgid "Revert"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history_form.html:48
+msgid ""
+"Press the 'Revert' button below to revert to this version of the object."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/object_history_form.html:52
+msgid "Press the 'Change History' button below to edit the history."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/submit_line.html:15
+msgid "Change History"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/contrib/simple_history/templates/simple_history/submit_line.html:20
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:32
+msgid "Close"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/forms.py:71
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user’s "
+"password, but you can change the password using <a href=\"{}\" class=\"text-"
+"primary-600 underline whitespace-nowrap dark:text-primary-500\">this form</"
+"a>."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/actions.html:22
+msgid "Run the selected action"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/actions.html:41
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/actions.html:42
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/actions.html:48
+msgid "Clear selection"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/app_index.html:5
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/base_site.html:3
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/index.html:7
+msgid "Django site admin"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/app_index.html:30
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/base_site.html:6
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/index.html:12
+msgid "Django administration"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/app_list.html:11
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list_default.html:8
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/app_list.html:57
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list.html:81
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list_default.html:60
+msgid "You don’t have permission to view or edit anything."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/auth/user/add_form.html:7
+msgid ""
+"First, enter a username and password. Then, you’ll be able to edit more user "
+"options."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/auth/user/add_form.html:9
+msgid "Enter a username and password."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/auth/user/change_password.html:25
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/auth/user/change_password.html:55
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_done.html:15
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_form.html:15
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_form.html:46
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/account_links.html:23
+msgid "Change password"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/auth/user/change_password.html:44
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_form.html:35
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/add_link.html:5
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/add_link.html:8
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_form_object_tools.html:12
+msgid "View on site"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_list.html:99
+msgid "Filters"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_list_results.html:29
+msgid "Toggle sorting"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_list_results.html:37
+msgid "Remove from sorting"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/change_list_results.html:43
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:37
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:53
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:69
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:76
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:71
+#, fuzzy
+#| msgid "Subject"
+msgid "Objects"
+msgstr "Mavzu"
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:100
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:93
+msgid "No, take me back"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_confirmation.html:103
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:96
+msgid "Yes, I’m sure"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:27
+msgid "Delete multiple objects"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:37
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:50
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/delete_selected_confirmation.html:64
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/edit_inline/tabular.html:21
+msgid "No records found."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/edit_inline/tabular.html:43
+msgid "Delete?"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/edit_inline/tabular.html:136
+msgid "Remove"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/filter.html:5
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/includes/object_delete_summary.html:5
+msgid "Summary"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/login.html:31
+msgid "Welcome back to"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/login.html:40
+#, python-format
+msgid ""
+"You are authenticated as %(username)s, but are not authorized to access this "
+"page. Would you like to login to a different account?"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/login.html:60
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/login.html:67
+msgid "Log in"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/login.html:78
+msgid "Return to site"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/nav_sidebar.html:17
+msgid "Menu"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:81
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/object_history.html:84
+msgid ""
+"This object doesn’t have a change history. It probably wasn’t added via this "
+"admin site."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/pagination.html:28
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/welcomemsg.html:12
+msgid "Show all"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/search_form.html:7
+msgid "Type to search"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:23
+msgid "Save and continue editing"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:25
+msgid "Save and view"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:38
+msgid "Save and add another"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/submit_line.html:44
+msgid "Save as new"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/widgets/clearable_file_input.html:6
+msgid "Image preview"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/widgets/clearable_file_input.html:24
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/widgets/clearable_file_input_small.html:17
+msgid "Choose file to upload"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/widgets/related_widget_wrapper.html:16
+#, python-format
+msgid "Change selected %(model)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/widgets/related_widget_wrapper.html:26
+#, python-format
+msgid "Add another %(model)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/widgets/related_widget_wrapper.html:35
+#, python-format
+msgid "View selected %(model)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/admin/widgets/related_widget_wrapper.html:45
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/logged_out.html:11
+msgid "You have been successfully logged out from the administration"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/logged_out.html:16
+msgid "Thanks for spending some quality time with the web site today."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/logged_out.html:20
+msgid "Log in again"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_done.html:26
+msgid "Your password was changed."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/registration/password_change_form.html:35
+msgid ""
+"Please enter your old password, for security’s sake, and then enter your new "
+"password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/change_list_filter.html:9
+msgid "Filter results"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/change_list_filter.html:13
+msgid "Clear all filters"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/change_list_filter.html:41
+msgid "Apply Filters"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/account_links.html:17
+msgid "View site"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/account_links.html:32
+msgid "Log out"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/actions_row.html:4
+msgid "More actions"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list.html:51
+msgid "All applications"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/app_list_default.html:30
+msgid "Add"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/boolean.html:10
+msgid "True"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/boolean.html:12
+msgid "False"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/history.html:9
+msgid "Recent actions"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/history.html:28
+msgid "Unknown content"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/messages/errornote.html:6
+msgid "Please correct the error below."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/messages/errornote.html:8
+msgid "Please correct the errors below."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/search.html:15
+msgid "Search apps and models..."
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/search.html:15
+msgid "Filter navigation items"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/theme_switch.html:15
+msgid "Dark"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/theme_switch.html:22
+msgid "Light"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/theme_switch.html:29
+msgid "System"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/welcomemsg.html:12
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/welcomemsg.html:12
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templates/unfold/helpers/welcomemsg.html:20
+msgid "Welcome,"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templatetags/unfold_list.py:63
+msgid "Select all objects on this page for an action"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/templatetags/unfold_list.py:310
+msgid "Select record"
+msgstr ""
+
+#: venv/lib/python3.11/site-packages/unfold/widgets.py:410
+msgid "Date"
 msgstr ""
