@@ -4,10 +4,10 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 
-# handler400 = "blog.views.bad_request"
-# handler403 = "blog.views.permission_denied"
+handler400 = "blog.views.bad_request"
+handler403 = "blog.views.permission_denied"
 handler404 = "blog.views.not_found"
-# handler500 = "blog.views.server_error"
+handler500 = "blog.views.server_error"
 
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
