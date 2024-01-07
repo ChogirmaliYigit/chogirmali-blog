@@ -11,8 +11,8 @@ urlpatterns = [
     path("thanks-for-contacting", ThanksForContactingView.as_view(), name="thanks-for-contacting"),
     path("about", AboutView.as_view(), name="about"),
     path("search", SearchView.as_view(), name="search"),
-    path("400", bad_request, name="400-bad-request"),
-    path("403", permission_denied, name="403-permission-denied"),
+    # path("400", bad_request, name="400-bad-request"),
+    # path("403", permission_denied, name="403-permission-denied"),
     path("404", not_found, name="404-not-found"),
-    path("500", server_error, name="500-server-error"),
+    # path("500", server_error, name="500-server-error"),
 ]
