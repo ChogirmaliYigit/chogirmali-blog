@@ -177,23 +177,4 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 100 * 1024 * 1024
 UNFOLD = {
     "show_search": True,
     "show_all_applications": True,
-    "navigation": [
-        {
-            "title": _("Navigation"),
-            "separator": True,
-            "items": [
-                {
-                    "title": _("Dashboard"),
-                    "icon": "dashboard",
-                    "link": reverse_lazy("admin:index"),
-                    "permission": lambda request: request.user.is_superuser,
-                },
-                {
-                    "title": _("Users"),
-                    "icon": "people",
-                    "link": reverse_lazy("admin:users_user_changelist"),
-                },
-            ],
-        },
-    ],
 }
