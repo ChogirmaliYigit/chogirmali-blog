@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import sentry_sdk
 from pathlib import Path
 from environs import Env
 from django.utils.translation import gettext_lazy as _
-from django.urls import reverse_lazy
+from sentry_sdk.integrations.django import DjangoIntegration
+
 
 env = Env()
 env.read_env()
@@ -32,7 +34,7 @@ SECRET_KEY = 'django-insecure--f(j&h391mtgax!p%4b(w^4iv_8hs3=))6t7n0=8v%2p7+-ao8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", False)
 
-ALLOWED_HOSTS = env.str("ALLOWED_HOSTS", []).split(',')
+ALLOWED_HOSTS = env.str("ALLOWED_HOSTS", "").split(',')
 
 TELEGRAM_BOT_TOKEN = env.str("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = env.str("TELEGRAM_CHAT_ID", "")
@@ -178,3 +180,10 @@ UNFOLD = {
     "show_search": True,
     "show_all_applications": True,
 }
+
+sentry_sdk.init(
+    dsn="https://103e74c3092d514d4bb9bc31bac44fb7@o4506573970604032.ingest.sentry.io/4506574138507264",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
+)
