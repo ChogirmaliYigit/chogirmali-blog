@@ -1,8 +1,9 @@
-from django.views.generic import TemplateView
 from django.db.models import Q
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import get_language
-from blog.models import Post, AboutMeSections, PRODUCTION, Comment
+from django.views.generic import TemplateView
+
+from blog.models import PRODUCTION, AboutMeSections, Comment, Post
 from blog.utils import send_contact_info_to_telegram_chat
 
 
@@ -29,22 +30,34 @@ class PostDetailView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated and self.request.user.is_staff:
-            post = Post.objects.filter(pk=context.get("pk"), language=get_language()).first()
+            post = Post.objects.filter(
+                pk=context.get("pk"), language=get_language()
+            ).first()
             if not post:
-                post = get_object_or_404(Post, alternative__pk=context.get("pk"), language=get_language())
+                post = get_object_or_404(
+                    Post, alternative__pk=context.get("pk"), language=get_language()
+                )
             context["previous_post"] = post.previous(is_production=False)
             context["next_post"] = post.next(is_production=False)
         else:
-            post = Post.objects.filter(pk=context.get("pk"), status=PRODUCTION, language=get_language()).first()
+            post = Post.objects.filter(
+                pk=context.get("pk"), status=PRODUCTION, language=get_language()
+            ).first()
             if not post:
-                post = get_object_or_404(Post, alternative__pk=context.get("pk"), language=get_language())
+                post = get_object_or_404(
+                    Post, alternative__pk=context.get("pk"), language=get_language()
+                )
             context["previous_post"] = post.previous()
             context["next_post"] = post.next()
         context["post"] = post
         return context
 
     def post(self, request, pk, *args, **kwargs):
-        Comment.objects.create(email=request.POST.get("email"), content=request.POST.get("message"), post_id=pk)
+        Comment.objects.create(
+            email=request.POST.get("email"),
+            content=request.POST.get("message"),
+            post_id=pk,
+        )
         return redirect("post-detail", pk=pk)
 
 
@@ -68,7 +81,9 @@ class AboutView(TemplateView):
         if self.request.user.is_authenticated and self.request.user.is_staff:
             queryset = AboutMeSections.objects.filter(language=get_language())
         else:
-            queryset = AboutMeSections.objects.filter(status=PRODUCTION, language=get_language())
+            queryset = AboutMeSections.objects.filter(
+                status=PRODUCTION, language=get_language()
+            )
         context["sections"] = queryset
         return context
 
@@ -80,11 +95,17 @@ class SearchView(TemplateView):
         query = request.GET.get("query")
         results = []
         if query:
-            results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+            results = Post.objects.filter(
+                Q(title__icontains=query) | Q(content__icontains=query)
+            )
             results.filter(language=get_language())
             if not request.user.is_authenticated and not request.user.is_staff:
                 results = results.filter(status=PRODUCTION)
         return render(request, self.template_name, {"results": results, "query": query})
+
+
+class ResumeView(TemplateView):
+    template_name = "sections/resume.html"
 
 
 def bad_request(request, exception=None):

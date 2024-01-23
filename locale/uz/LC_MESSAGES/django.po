@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 21:28+0500\n"
+"POT-Creation-Date: 2024-01-23 11:48+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: config/settings.py:139 templates/includes/navbar.html:30
-#: templates/includes/navbar.html:33
+#: config/settings.py:144 templates/includes/navbar.html:42
+#: templates/includes/navbar.html:45
 msgid "english"
 msgstr "Ingliz"
 
-#: config/settings.py:140 templates/includes/navbar.html:30
-#: templates/includes/navbar.html:34
+#: config/settings.py:145 templates/includes/navbar.html:42
+#: templates/includes/navbar.html:46
 msgid "uzbek"
 msgstr "O'zbek"
-
-#: config/settings.py:182
-msgid "Navigation"
-msgstr ""
-
-#: config/settings.py:186
-msgid "Dashboard"
-msgstr ""
-
-#: config/settings.py:192
-msgid "Users"
-msgstr "Foydalanuvchilar"
 
 #: templates/blog/blog.html:48
 msgid "read more"
@@ -52,13 +40,36 @@ msgstr "Oldingi"
 msgid "Next"
 msgstr "Keyingi"
 
-#: templates/blog/search.html:31 templates/includes/navbar.html:52
+#: templates/blog/search.html:31 templates/includes/navbar.html:64
 msgid "Search"
 msgstr "Qidirish"
+
+#: templates/errors/400.html:14
+msgid "Sorry, but the request was invalid or could not be processed."
+msgstr ""
+"Kechirasiz, lekin so‘rov noto‘g‘ri yoki uni qayta ishlash imkonsiz edi."
+
+#: templates/errors/400.html:16 templates/errors/403.html:16
+#: templates/errors/404.html:16 templates/errors/500.html:17
+#: templates/sections/thanks-for-contacting.html:87
+msgid "Go home"
+msgstr "Bosh sahifaga"
+
+#: templates/errors/403.html:14
+msgid "Sorry, but you do not have permission to access this resource."
+msgstr "Kechirasiz, lekin sizda ushbu manbaga kirish uchun ruxsat yo'q."
 
 #: templates/errors/404.html:14
 msgid "We couldn't find the page you were looking for."
 msgstr "Siz qidirgan sahifani topa olmadik."
+
+#: templates/errors/500.html:15
+msgid ""
+"Oops! Something went wrong on our end. We're working to fix the issue. "
+"Please try again later or contact with us"
+msgstr ""
+"Ehh! Nimadir xato ketdi. Muammoni hal qilish ustida ishlayapmiz.Iltimos "
+"keyinroq qayta urinib ko'ring yoki biz bilan bog'laning"
 
 #: templates/includes/footer.html:12
 msgid ""
@@ -72,13 +83,17 @@ msgstr ""
 msgid "Template"
 msgstr "Shablon"
 
-#: templates/includes/navbar.html:21
+#: templates/includes/navbar.html:32
 msgid "About"
 msgstr "Haqida"
 
-#: templates/includes/navbar.html:22
+#: templates/includes/navbar.html:33
 msgid "Contact"
 msgstr "Bog'lanish"
+
+#: templates/includes/navbar.html:34
+msgid "Resume"
+msgstr ""
 
 #: templates/includes/no-content.html:5
 msgid "Unfortunately, there is no information yet 😔"
@@ -145,10 +160,6 @@ msgid ""
 msgstr ""
 "Men bilan bog'langaningiz uchun tashakkur! Agar ma'lumotlar to'g'ri bo'lsa, "
 "tez orada siz bilan bog'lanaman."
-
-#: templates/sections/thanks-for-contacting.html:87
-msgid "Go home"
-msgstr "Bosh sahifaga"
 
 #: venv/lib/python3.11/site-packages/click/_termui_impl.py:518
 #, python-brace-format
@@ -1638,6 +1649,10 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
+#: venv/lib/python3.11/site-packages/isort/main.py:158
+msgid "show this help message and exit"
+msgstr ""
+
 #: venv/lib/python3.11/site-packages/unfold/admin.py:298
 #: venv/lib/python3.11/site-packages/unfold/admin.py:319
 msgid "Select value"
@@ -2392,3 +2407,6 @@ msgstr ""
 #: venv/lib/python3.11/site-packages/unfold/widgets.py:410
 msgid "Date"
 msgstr ""
+
+#~ msgid "Users"
+#~ msgstr "Foydalanuvchilar"

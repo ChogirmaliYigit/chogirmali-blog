@@ -3,6 +3,17 @@
 
 {% block extra_styles %}
 <link rel="stylesheet" href="{% static 'assets/css/theme-switcher.css' %}">
+<style>
+    h1.logo-text {
+    font-size: 24px;
+    }
+
+    @media screen and (max-width: 767px) {
+        h1.logo-text {
+            font-size: 18px;
+        }
+    }
+</style>
 {% endblock extra_styles %}
 
 {% get_current_language as current_language %}
@@ -12,7 +23,7 @@
 
         <a href="{% url 'main' %}" class="logo d-flex align-items-center">
             <!-- <img src="{% static 'assets/img/logo.png' %}" alt=""> -->
-            <h1>Cho'girmali Blog</h1>
+            <h1 class="logo-text">Cho'girmali Blog</h1>
         </a>
 
         <nav id="navbar" class="navbar">
@@ -20,6 +31,7 @@
                 <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
                 <li><a href="{% url 'contact' %}">{% trans "Contact" %}</a></li>
+                <li><a href="{% url 'resume' %}">{% trans "Resume" %}</a></li>
             </ul>
         </nav>
 

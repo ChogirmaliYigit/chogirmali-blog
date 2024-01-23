@@ -4,26 +4,25 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blog', '0005_comment'),
+        ("blog", "0005_comment"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='aboutmesections',
-            name='title',
+            model_name="aboutmesections",
+            name="title",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='image',
+            model_name="post",
+            name="image",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='slug',
+            model_name="post",
+            name="slug",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='title',
+            model_name="post",
+            name="title",
         ),
     ]

@@ -2,13 +2,13 @@
 * Template Name: ZenBlog
 * File: variables.css
 * Description: Easily customize colors, typography, and other repetitive properties used in the template main stylesheet file main.css
-* 
+*
 * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
-* 
+*
 * Contents:
-* 1. ZenBlog template variables 
+* 1. ZenBlog template variables
 * 2. Override default Bootstrap variables
 * 3. Set color and background class names
 *
@@ -16,7 +16,7 @@
 */
 
 /*--------------------------------------------------------------
-# 1. ZenBlog template variables 
+# 1. ZenBlog template variables
 --------------------------------------------------------------*/
 :root {
 
@@ -64,7 +64,7 @@
 
   --color-purple: #6f42c1;
   --color-purple-rgb: 111, 66, 193;
-  
+
   --color-pink: #f3268c;
   --color-pink-rgb: 243, 38, 140;
 

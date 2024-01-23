@@ -6,14 +6,14 @@
 <section id="404page" class="404page mb-5" style="align-items: center;justify-content: center;text-align: center;">
     <div class="container" data-aos="fade-up">
         <div class="row g-5">
-            <div class="col-lg-6 offset-3">
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
                 <div class="post-entry-1 lg mb-0" style="margin-top: 100px;">
                     <img src="{% static 'assets/img/404.png' %}" alt="" style="height: 100%;width: 100%;margin: 0;">
-                    <h3>{% trans "Not Found (404) %}</h3>
+                    <h3>Not Found (404)</h3>
                     <p class="mb-4 d-block">
                         {% trans "We couldn't find the page you were looking for." %}
                     </p>
-                    <a class="btn btn-outline-primary" href="{% url 'main' %}">Go to home</a>
+                    <a class="btn btn-outline-primary" href="{% url 'main' %}">{% trans "Go home" %}</a>
                 </div>
             </div>
         </div>

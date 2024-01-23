@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% load i18n %}
+
+{% get_current_language as current_language %}
+
+{% block content %}
+    <section id="resume" class="resume" style="align-items: center; justify-content: center; text-align: center;">
+        <div class="container" data-aos="fade-up">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 mt-5" style="height: 1100px;">
+                <iframe src="{% google_docs_url 'en' 'light' %}" style="width: 100%;height:100%;"></iframe>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

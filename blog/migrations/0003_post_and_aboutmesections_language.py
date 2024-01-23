@@ -4,20 +4,27 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('blog', '0002_aboutmesections'),
+        ("blog", "0002_aboutmesections"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='post',
-            name='language',
-            field=models.CharField(choices=[('en', 'english'), ('uz', 'uzbek')], default='en', max_length=10),
+            model_name="post",
+            name="language",
+            field=models.CharField(
+                choices=[("en", "english"), ("uz", "uzbek")],
+                default="en",
+                max_length=10,
+            ),
         ),
         migrations.AddField(
-            model_name='aboutmesections',
-            name='language',
-            field=models.CharField(choices=[('en', 'english'), ('uz', 'uzbek')], default='en', max_length=10),
+            model_name="aboutmesections",
+            name="language",
+            field=models.CharField(
+                choices=[("en", "english"), ("uz", "uzbek")],
+                default="en",
+                max_length=10,
+            ),
         ),
     ]
