@@ -1,10 +1,11 @@
+from django.conf import settings
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.translation import get_language
 from django.views.generic import TemplateView
 
 from blog.models import PRODUCTION, AboutMeSections, Comment, Post
-from blog.utils import send_contact_info_to_telegram_chat
+from blog.utils import restart_server_service, send_contact_info_to_telegram_chat
 
 
 class MainView(TemplateView):
@@ -122,3 +123,9 @@ def not_found(request, exception=None):
 
 def server_error(request, exception=None):
     return render(request, "errors/500.html")
+
+
+def restart_server(request):
+    if request.user.is_authenticated and request.user.is_staff:
+        restart_server_service(settings.PULL_COMMAND, settings.RESTART_COMMAND)
+    return redirect("404-not-found")

@@ -1,3 +1,6 @@
+import os
+import subprocess
+
 import requests
 from django.conf import settings
 
@@ -23,3 +26,13 @@ def send_contact_info_to_telegram_chat(data):
             "disable_web_page_preview": True,
         },
     )
+
+
+def restart_server_service(pull_command, restart_command, project_directory=None):
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    script_directory = os.path.dirname(script_directory)
+    subprocess.run(
+        f"cd {project_directory if project_directory else script_directory} && {pull_command}",
+        shell=True,
+    )
+    subprocess.run(restart_command, shell=True)
