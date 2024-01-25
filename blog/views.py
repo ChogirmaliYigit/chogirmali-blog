@@ -128,4 +128,5 @@ def server_error(request, exception=None):
 def restart_server(request):
     if request.user.is_authenticated and request.user.is_staff:
         restart_server_service(settings.PULL_COMMAND, settings.RESTART_COMMAND)
+        return redirect("main")
     return redirect("404-not-found")
