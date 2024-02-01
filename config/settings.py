@@ -38,6 +38,9 @@ ALLOWED_HOSTS = env.str("ALLOWED_HOSTS", "").split(",")
 
 TELEGRAM_BOT_TOKEN = env.str("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = env.str("TELEGRAM_CHAT_ID", "")
+
+STATIC_FILES_BASE_URL = env.str("STATIC_FILES_BASE_URL", "")
+
 GOOGLE_ANALYTICS_ID = env.str("GOOGLE_ANALYTICS_ID", "")
 GOOGLE_TAG_MANAGER_ID = env.str("GOOGLE_TAG_MANAGER_ID", "")
 GOOGLE_DOCS_URLS = {
@@ -176,10 +179,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-STATIC_URL = "static/"
-STATIC_ROOT = "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "static/"]
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
