@@ -4,8 +4,22 @@ from unfold.admin import ModelAdmin
 from blog.models import AboutMeSections, Comment, Post
 
 
+class BaseModelAdmin(ModelAdmin):
+    list_filter_submit = True
+
+    def truncated_content(self, obj):
+        max_length = 80
+        return (
+            (obj.content[:max_length] + "...")
+            if len(obj.content) > max_length
+            else obj.content
+        )
+
+    truncated_content.short_description = "Content"
+
+
 @admin.register(Post)
-class PostAdmin(ModelAdmin):
+class PostAdmin(BaseModelAdmin):
     list_display = (
         "truncated_content",
         "status",
@@ -23,19 +37,9 @@ class PostAdmin(ModelAdmin):
         "status",
     )
 
-    def truncated_content(self, obj):
-        max_length = 80
-        return (
-            (obj.content[:max_length] + "...")
-            if len(obj.content) > max_length
-            else obj.content
-        )
-
-    truncated_content.short_description = "Content"
-
 
 @admin.register(AboutMeSections)
-class AboutMeSectionsAdmin(ModelAdmin):
+class AboutMeSectionsAdmin(BaseModelAdmin):
     list_display = (
         "meta",
         "truncated_content",
@@ -59,21 +63,9 @@ class AboutMeSectionsAdmin(ModelAdmin):
         "status",
     )
 
-    list_filter_submit = True
-
-    def truncated_content(self, obj):
-        max_length = 80
-        return (
-            (obj.content[:max_length] + "...")
-            if len(obj.content) > max_length
-            else obj.content
-        )
-
-    truncated_content.short_description = "Content"
-
 
 @admin.register(Comment)
-class CommentAdmin(ModelAdmin):
+class CommentAdmin(BaseModelAdmin):
     list_display = (
         "email",
         "truncated_content",
@@ -90,15 +82,3 @@ class CommentAdmin(ModelAdmin):
         "email",
         "content",
     )
-
-    list_filter_submit = True
-
-    def truncated_content(self, obj):
-        max_length = 80
-        return (
-            (obj.content[:max_length] + "...")
-            if len(obj.content) > max_length
-            else obj.content
-        )
-
-    truncated_content.short_description = "Content"

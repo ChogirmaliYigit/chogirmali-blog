@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-23 11:48+0500\n"
+"POT-Creation-Date: 2024-01-27 22:45+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/settings.py:144 templates/includes/navbar.html:42
+#: config/settings.py:158 templates/includes/navbar.html:42
 #: templates/includes/navbar.html:45
 msgid "english"
 msgstr "English"
 
-#: config/settings.py:145 templates/includes/navbar.html:42
+#: config/settings.py:159 templates/includes/navbar.html:42
 #: templates/includes/navbar.html:46
 msgid "uzbek"
 msgstr "Uzbek"
@@ -32,11 +32,39 @@ msgstr "Uzbek"
 msgid "read more"
 msgstr ""
 
-#: templates/blog/post_detail.html:104
+#: templates/blog/post_detail.html:40
+msgid "Comments"
+msgstr ""
+
+#: templates/blog/post_detail.html:52 templates/blog/post_detail.html:58
+msgid "Reply"
+msgstr ""
+
+#: templates/blog/post_detail.html:58
+msgid "Replies"
+msgstr ""
+
+#: templates/blog/post_detail.html:86
+msgid "Leave a Comment"
+msgstr ""
+
+#: templates/blog/post_detail.html:91
+msgid "Enter your email"
+msgstr ""
+
+#: templates/blog/post_detail.html:95
+msgid "Enter your message"
+msgstr ""
+
+#: templates/blog/post_detail.html:97
+msgid "Post comment"
+msgstr ""
+
+#: templates/blog/post_detail.html:105
 msgid "Previous"
 msgstr ""
 
-#: templates/blog/post_detail.html:109
+#: templates/blog/post_detail.html:110
 msgid "Next"
 msgstr ""
 
@@ -50,7 +78,7 @@ msgstr ""
 
 #: templates/errors/400.html:16 templates/errors/403.html:16
 #: templates/errors/404.html:16 templates/errors/500.html:17
-#: templates/sections/thanks-for-contacting.html:87
+#: templates/sections/thanks-for-contacting.html:85
 msgid "Go home"
 msgstr ""
 
@@ -152,6 +180,13 @@ msgstr ""
 msgid ""
 "Thanks for contacting me! I will contact you soon with your details if they "
 "are correct."
+msgstr ""
+
+#: templates/sections/thanks-for-contacting.html:83
+msgid ""
+"You will be redirected to the main page after <span class='countdown-"
+"animation' id='countdown'>5</span> seconds. Note: If you don't get "
+"redirected, please click the button below."
 msgstr ""
 
 #: venv/lib/python3.11/site-packages/click/_termui_impl.py:518

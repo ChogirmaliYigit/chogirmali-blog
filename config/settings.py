@@ -60,9 +60,6 @@ GOOGLE_DOCS_URLS = {
 GITHUB_REPO = "https://github.com/ChogirmaliYigit/chogirmali-blog"
 CONTACT_EMAIL = "chogirmali.yigit@gmail.com"
 
-PULL_COMMAND = env.str("PULL_COMMAND")
-RESTART_COMMAND = env.str("RESTART_COMMAND")
-
 
 # Application definition
 

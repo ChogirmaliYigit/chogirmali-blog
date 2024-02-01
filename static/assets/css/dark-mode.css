@@ -1079,7 +1079,7 @@ section {
 }
 
 .comment-replies {
-  background-color: var(--color-gray);
+  border: 2px solid var(--color-gray);
 }
 
 input#comment-email::placeholder,

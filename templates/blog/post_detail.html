@@ -34,30 +34,32 @@
               <p>{{ post.content|markdown }}</p>
             </div>
 
-            {% comment %}
+            <hr>
+
             <div class="comments">
               <h5 class="comment-title py-4">{{ post.comments.count }} {% trans "Comments" %}</h5>
               {% for comment in post.comments.all %}
                 {% if not comment.reply_to %}
                   <div class="comment d-flex mb-4">
                     <div class="flex-grow-1 ms-2 ms-sm-3">
-                      <div class="comment-meta d-flex align-items-baseline">
+                      <div id="comment-{{ comment.id }}" class="comment-meta d-flex align-items-baseline">
                         <h6 class="me-2">{{ comment.email }}</h6>
                         <span class="date">{{ comment.updated_at|date:"Y-m-d" }} {{ comment.updated_at|time:"H:i" }}</span>
                       </div>
                       <div class="comment-body">
                         {{ comment.content }}
                       </div>
+                      <a href="#" class="reply-link" data-comment-id="{{ comment.id }}">{% trans "Reply" %}</a>
 
                       {% if comment.replied_comments.count > 0 %}
                         <div class="comment-replies p-3 mt-3 rounded">
                           <h6 class="comment-replies-title mb-4 text-muted text-uppercase">
                             {{ comment.replied_comments.count }}
-                            {% if comment.replied_comments.count == 1 %} {% trans "reply" %} {% else %} {% trans "replies" %} {% endif %}
+                            {% if comment.replied_comments.count == 1 %} {% trans "Reply" %} {% else %} {% trans "Replies" %} {% endif %}
                           </h6>
 
                           {% for reply in comment.replied_comments.all %}
-                            <div class="reply d-flex mb-4">
+                            <div id="comment-reply-{{ reply.id }}" class="reply d-flex mb-4">
                               <div class="flex-grow-1 ms-2 ms-sm-3">
                                 <div class="reply-meta d-flex align-items-baseline">
                                   <h6 class="mb-0 me-2">{{ reply.email }}</h6>
@@ -77,6 +79,8 @@
               {% endfor %}
             </div>
 
+            <hr>
+
             <div class="row justify-content-center mt-5">
               <div class="col-lg-12 form">
                 <h5 class="comment-title">{% trans "Leave a Comment" %}</h5>
@@ -84,17 +88,17 @@
                   {% csrf_token %}
                   <div class="row">
                     <div class="form-group col-md-6 mb-3">
-                      <input type="text" class="form-control" name="email" id="comment-email" placeholder="{% trans 'Enter your email' %}">
+                      <input type="email" class="form-control" name="email" id="comment-email" placeholder="{% trans 'Enter your email' %}" required>
                     </div>
                   </div>
                   <div class="form-group mb-3">
-                    <textarea class="form-control" id="comment-message" name="message" placeholder="{% trans 'Enter your message' %}" cols="30" rows="10"></textarea>
+                    <textarea class="form-control" id="comment-message" name="message" placeholder="{% trans 'Enter your message' %}" cols="30" rows="10" required></textarea>
                   </div>
+                  <input type="hidden" name="reply_to" id="comment-reply-to" value="">
                   <button type="submit" class="btn btn-primary">{% trans 'Post comment' %}</button>
                 </form>
               </div>
             </div>
-            {% endcomment %}
 
             <!-- Previous and Next buttons -->
             <div class="row mt-4">
@@ -133,6 +137,28 @@
       var userEmail = emailInput.value;
       localStorage.setItem('user_email', userEmail);
     });
+
+    var replyLinks = document.querySelectorAll('.reply-link');
+    replyLinks.forEach(function (replyLink) {
+      replyLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        showReplyForm(replyLink);
+      });
+    });
+
+    function showReplyForm(replyLink) {
+      // Get the comment ID from the data-comment-id attribute
+      var commentId = replyLink.getAttribute('data-comment-id');
+
+      // Set the reply-to comment ID in the form
+      document.getElementById('comment-reply-to').value = commentId;
+
+      // Scroll to the comment form
+      document.getElementById('commentForm').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   });
 </script>
 {% endblock extra_scripts %}

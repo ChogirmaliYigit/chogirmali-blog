@@ -12,7 +12,6 @@ from blog.views import (
     bad_request,
     not_found,
     permission_denied,
-    restart_server,
     server_error,
 )
 
@@ -33,5 +32,4 @@ urlpatterns = [
     path("403", permission_denied, name="403-permission-denied"),
     path("404", not_found, name="404-not-found"),
     path("500", server_error, name="500-server-error"),
-    path("restart", restart_server, name="restart-server"),
 ]

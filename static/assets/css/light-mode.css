@@ -1052,7 +1052,7 @@ section {
 }
 
 .comment-replies {
-  background-color: #f8f9fa;
+  border: 2px solid var(--color-gray);
 }
 
 .comment .comment-meta .text-muted,
