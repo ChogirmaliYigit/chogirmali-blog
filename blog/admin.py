@@ -1,6 +1,7 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
 
+from blog.actions import download_file
 from blog.models import AboutMeSections, Comment, Post
 
 
@@ -20,6 +21,8 @@ class BaseModelAdmin(ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(BaseModelAdmin):
+    actions = [download_file]
+
     list_display = (
         "truncated_content",
         "status",
@@ -40,6 +43,8 @@ class PostAdmin(BaseModelAdmin):
 
 @admin.register(AboutMeSections)
 class AboutMeSectionsAdmin(BaseModelAdmin):
+    actions = [download_file]
+
     list_display = (
         "meta",
         "truncated_content",
@@ -66,6 +71,8 @@ class AboutMeSectionsAdmin(BaseModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(BaseModelAdmin):
+    actions = [download_file]
+
     list_display = (
         "email",
         "truncated_content",

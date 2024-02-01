@@ -1,5 +1,7 @@
+import openpyxl
 import requests
 from django.conf import settings
+from openpyxl.styles import Font
 
 
 def send_contact_info_to_telegram_chat(data):
@@ -23,3 +25,19 @@ def send_contact_info_to_telegram_chat(data):
             "disable_web_page_preview": True,
         },
     )
+
+
+def export_to_excel(data: list, headings: list, filepath: str) -> None:
+    wb = openpyxl.Workbook()
+    sheet = wb.active
+
+    sheet.row_dimensions[1].font = Font(bold=True)
+
+    for col_no, heading in enumerate(headings, start=1):
+        sheet.cell(row=1, column=col_no).value = heading
+
+    for row_no, row in enumerate(data, start=2):
+        for col_no, cell_value in enumerate(row, start=1):
+            sheet.cell(row=row_no, column=col_no).value = cell_value
+
+    wb.save(filepath)

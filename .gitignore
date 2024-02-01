@@ -165,3 +165,4 @@ staticfiles/
 .DS_Store
 static/.DS_Store
 test.md
+db/
