@@ -34,8 +34,3 @@ def markdown(value):
 @register.simple_tag
 def contact_email():
     return settings.CONTACT_EMAIL
-
-
-@register.simple_tag
-def static(path):
-    return settings.STATIC_FILES_BASE_URL + str(path)
