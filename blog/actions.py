@@ -13,7 +13,7 @@ def write_excel(name: str, queryset):
                 post.content,
                 post.status,
                 post.language,
-                post.alternative.id,
+                post.alternative.id if post.alternative else "-",
                 post.created_at.strftime("%d.%m.%Y %H:%M:%S"),
                 post.updated_at.strftime("%d.%m.%Y %H:%M:%S"),
                 post.previous(False).id if post.previous(False) else "",
